@@ -4,7 +4,8 @@ body {
 	background-color: black;
 	color: white;
 	font-family: 'Pathway Gothic One', sans-serif;
-	margin: 10px 200px;
+	margin: 0;
+	overflow: hidden;
 	
 
 }
@@ -39,7 +40,8 @@ img {
 
 #cointainer {
 	max-width: 960px;
-	min-width: 320px;	
+	min-width: 320px;
+	margin: 0 auto;	
 }
 
 #header{
@@ -64,8 +66,8 @@ img {
 
 #portfolio{
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 0.5em;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
 }
 
 .project{
