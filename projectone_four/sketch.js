@@ -10,57 +10,10 @@ var shinSpeed = 2;
 var mushCounter = 5;
 var mushOne, mushTwo, mushThree;
 
-var shinDoor;
+var shinDoor, devilHouse;
 
 var mushX = 80;
 var mushY = 100;
-
-var mushZeroPosition = [
-	[0, mushY],
-	[0, mushY*2],
-	[0, mushY*3],
-	[0, mushY*4],
-	[0, mushY*5],
-
-	];
-
-
-var mushTwoPosition = [
-	[mushX*2, mushY],
-	[mushX*2, mushY*2],
-	[mushX*2, mushY*3],
-	[mushX*2, mushY*4],
-	[mushX*2, mushY*5],
-];
-
-var mushFourPosition = [
-	[mushX*4, mushY],
-	[mushX*4, mushY*2],
-	[mushX*4, mushY*3],
-	[mushX*4, mushY*4],
-	[mushX*4, mushY*5],
-
-];
-
-
-var mushSixPosition = [
-	[mushX*6, mushY],
-	[mushX*6, mushY*2],
-	[mushX*6, mushY*3],
-	[mushX*6, mushY*4],
-	[mushX*6, mushY*5],
-
-	];
-
-var mushEightPosition = [
-	[mushX*8, mushY],
-	[mushX*8, mushY*2],
-	[mushX*8, mushY*3],
-	[mushX*8, mushY*4],
-	[mushX*8, mushY*5],
-
-	];
-
 
 
 function preload() {
@@ -73,11 +26,12 @@ function preload() {
 	mushTwo = loadImage("mushroomtwo_reverse.gif");
 	mushThree = loadImage("mushroomthree.gif");
 	shinDoor = loadImage("shin_door.png");
+	devilHouse = loadImage("devil_house.png");
 
 }
 
 function setup() {
-	createCanvas (windowWidth, 360);
+	createCanvas (1630, 360);
 	shinX = width/2;
 	shinY = height/2;
 	imageMode(CENTER);
@@ -87,11 +41,23 @@ function setup() {
 }
 
 
-function door(x, y) {
+function door(img, x, y) {
 	image(shinDoor, x, y);
 
-}
+	// 2d collision bewteen shin and door 
 
+	if (shinX - shinMask.width / 2 < x + shinDoor.width / 2 && 
+		shinX + shinMask.width / 2 > x - shinDoor.width / 2 &&
+		shinY - shinMask.height / 2 < y + shinDoor.height / 2 &&
+		shinY + shinMask.height / 2 < y - shinDoor.height / 2 
+		) {	
+			background(0);
+			image(img, x, y);
+	} 
+
+	}
+
+ 
 function draw() {
 	background(0);
 
@@ -115,20 +81,16 @@ function draw() {
  		image(mushTwo, 1360, mushCounter * 120);
  		image(mushThree, 1520, mushCounter* 120);
  		image(mushTwo, 1680, mushCounter * 120);
- 		image(mushThree, 1840, mushCounter* 120);
- 		image(mushTwo, 2000, mushCounter * 120);
- 		image(mushThree, 2160, mushCounter* 120);
- 		image(mushTwo, 2320, mushCounter * 120);
- 		image(mushThree, 2480, mushCounter* 120);
- 		image(mushTwo, 2640, mushCounter * 120);
+ 
  	}
 	
 
-
-	/*character movement*/
-
 	/* door sign */
-	door(2000, height/2);
+	door(devilHouse, 1300, height/2);
+
+
+	
+	/*character movement*/
 
 	var shinIsRotating = false;
 	var shinIsRotatingLeft = false;
