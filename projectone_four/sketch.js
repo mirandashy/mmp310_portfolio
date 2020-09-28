@@ -36,8 +36,8 @@ function setup() {
 	shinY = height/2;
 	imageMode(CENTER);
 	
-	mushTwo.delay(10);
-	mushThree.delay(10);
+	mushTwo.delay(50);
+	mushThree.delay(50);
 }
 
 
@@ -86,7 +86,7 @@ function draw() {
 	
 
 	/* door sign */
-	door(devilHouse, 1300, height/2);
+	door(devilHouse, 500, height/2);
 
 
 	
