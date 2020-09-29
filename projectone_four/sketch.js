@@ -10,7 +10,7 @@ var shinSpeed = 2;
 var mushCounter = 5;
 var mushOne, mushTwo, mushThree;
 
-var shinDoor, devilHouse;
+var shinDoor, devilHouse, rain, textBox;
 
 var mushX = 80;
 var mushY = 100;
@@ -27,6 +27,8 @@ function preload() {
 	mushThree = loadImage("mushroomthree.gif");
 	shinDoor = loadImage("shin_door.png");
 	devilHouse = loadImage("devil_house.png");
+	rain = loadImage("rain.gif");
+	textBox = loadImage("box.png");
 
 }
 
@@ -46,16 +48,35 @@ function door(img, x, y) {
 
 	// 2d collision bewteen shin and door 
 
-	if (shinX - shinMask.width / 2 < x + shinDoor.width / 2 && 
-		shinX + shinMask.width / 2 > x - shinDoor.width / 2 &&
-		shinY - shinMask.height / 2 < y + shinDoor.height / 2 &&
-		shinY + shinMask.height / 2 < y - shinDoor.height / 2 
+	if (shinX - shinMask.width / 3 < x + shinDoor.width / 3 && 
+		shinX + shinMask.width / 3 > x - shinDoor.width / 3 &&
+		shinY - shinMask.height / 3 < y + shinDoor.height / 3 &&
+		shinY + shinMask.height / 3 > y - shinDoor.height / 3 
 		) {	
 			background(0);
-			image(img, x, y);
+				for (let x = 0; x <+ width; x += 196) {
+					for (let y = 0; y <= height; y += 196) {
+						image(rain, x, y);
+					}
+		} image(img, x, y);
+	
+		
+		image(textBox, 180, 200);
+	
+		fill("white");
+		textSize(15);
+		textFont('Roboto Mono');
+		var s = "You just entered hole";
+		text(s, 85, 200);
+
+
+
 	} 
 
-	}
+
+	} 
+
+
 
  
 function draw() {
