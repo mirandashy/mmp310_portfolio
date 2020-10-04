@@ -12,11 +12,19 @@ var mushCounter = 5;
 var mushOne, mushTwo, mushThree;
 
 var shinDoor, devilHouse, rain, textBox;
+var gyozaImage; 
 
 var mushX = 80;   
 var mushY = 100;
 
+// game physics
 var groundY = 100;
+var GRAVITY = 2; // acceleration 2px per frame
+var shinYSpeed = 2;
+var shinIsJumping = false;
+
+var gyozaPositions = []; //add gyoza x values
+
 
 var scene = "main"; // hole, characters
 
@@ -38,11 +46,11 @@ function preload() {
 	market = loadImage("holemarket.png");
 	light = loadImage("lighting.png");
 	tavern = loadImage("hungry_bug.png");
-
+	gyozaImage = loadImage("gyoza.png");
 }
 
 function setup() {
-	createCanvas (1630, 360);
+	createCanvas (1630, 400);
 	shinX = width/2;
 	shinY = height/2;
 	imageMode(CENTER);
@@ -109,20 +117,28 @@ function main() {
 
 	
 	/*character movement*/
-
-	
-
 }
 
 function setupHole() {
 
+	// saves shin map position
 	shinMainX = shinX;
 	shinMainY = shinY;
 
+	// move shin to game ground
 	shinX = 250;
 	shinY = height - groundY;
+	scene = 'hole';	
+
+	//add gyoza
+	gyozaPositions = []; // reset gyoza position
+	var gyozaNumber = random(8, 12);
+
+	for (let i = 0; i < gyozaNumber; i++) {
+		gyozaPositions.push( random(width/2, width) + i * width / 2);
+	} 
+
 	scene = 'hole';
-	
 }
 
 function hole() {
@@ -135,12 +151,36 @@ function hole() {
 	image(market, 650, height - 210);
 	image(hospital, 1200, height - 210);
 
+
+ 	/* jumping and falling */
+ 	
+ 	// apply gravity
+ 	if (shinY < height - groundY) {
+ 		shinYSpeed += GRAVITY;
+ 	} else {
+ 		shinYSpeed = 0;
+ 		shinIsJumping = false;
+ 	}
+
+ 	//32 spacebar
+ 	if (!shinIsJumping && keyIsDown(32)) {
+ 		shinYSpeed = -30;
+ 		shinIsJumping = true;
+ 	}
+
+ 	shinY += shinYSpeed;
+
 	image(shinMask, shinX, shinY);
 
+ 	for (let i = 0; i < gyozaPositions.lenght; i++){
+ 		let x = gyozaPositions[i];
+ 		gyoza(x);
+ 		gyozaPositions[i] -= 5;
+
+ 	}
 
 
 }
-
 
 
 function win() {
@@ -159,10 +199,6 @@ function win() {
 	if (keyIsDown(ENTER)) {
 		setupMain();
 	}
-
-
-	
-
 }
 
 
@@ -182,12 +218,7 @@ function lose() {
 	if (keyIsDown(82)) {
 		setupHole();
 	}
-
-
-	
-
 }
-
 
 // game object functions
 
@@ -264,4 +295,20 @@ function shin() {
 		image(shinMask, shinX, shinY);
 	}
 
+}
+
+function gyoza(x) {
+	let y = height - groundY;
+	image(gyozaImage, x, y);
+
+	// collision
+	if (shinX - shinMask.width / 3 < x + gyozaImage.width / 3 && 
+		shinX + shinMask.width / 3 > x - gyozaImage.width / 3 &&
+		shinY - shinMask.height / 3 < y + gyozaImage.height / 3 &&
+		shinY + shinMask.height / 3 > y - gyozaImage.height / 3) {
+
+		//change scene
+		scene = 'lose';
+
+	}
 }
