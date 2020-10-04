@@ -29,7 +29,6 @@ function preload() {
 	devilHouse = loadImage("devil_house.png");
 	rain = loadImage("rain.gif");
 	textBox = loadImage("box.png");
-
 }
 
 function setup() {
@@ -38,47 +37,15 @@ function setup() {
 	shinY = height/2;
 	imageMode(CENTER);
 	
+	rain.delay(((width / rain.width) * (height / rain.height)) * rain.gifProperties.frames[0].delay);
+
 	mushTwo.delay(50);
 	mushThree.delay(50);
 }
 
 
-function door(img, x, y) {
-	image(shinDoor, x, y);
-
-	// 2d collision bewteen shin and door 
-
-	if (shinX - shinMask.width / 3 < x + shinDoor.width / 3 && 
-		shinX + shinMask.width / 3 > x - shinDoor.width / 3 &&
-		shinY - shinMask.height / 3 < y + shinDoor.height / 3 &&
-		shinY + shinMask.height / 3 > y - shinDoor.height / 3 
-		) {	
-			background(0);
-				for (let x = 0; x <+ width; x += 196) {
-					for (let y = 0; y <= height; y += 196) {
-						image(rain, x, y);
-					}
-		} image(img, x, y);
-	
-		
-		image(textBox, 180, 200);
-	
-		fill("white");
-		textSize(15);
-		textFont('Roboto Mono');
-		var s = "You just entered hole";
-		text(s, 85, 200);
 
 
-
-	} 
-
-
-	} 
-
-
-
- 
 function draw() {
 	background(0);
 
@@ -145,9 +112,37 @@ function draw() {
 		image(shinDown, shinX, shinY);
 	} else {
 		image(shinMask, shinX, shinY);
-	}
-
-	
-
-
+	}	
 }
+
+
+
+function door(img, x, y) {
+	image(shinDoor, x, y);
+
+	// 2d collision bewteen shin and door 
+
+	if (shinX - shinMask.width / 3 < x + shinDoor.width / 3 && 
+		shinX + shinMask.width / 3 > x - shinDoor.width / 3 &&
+		shinY - shinMask.height / 3 < y + shinDoor.height / 3 &&
+		shinY + shinMask.height / 3 > y - shinDoor.height / 3 
+		) {	
+			background(0);
+				for (let x = 0; x <= width; x += 196) {
+					for (let y = 0; y <= height; y += 196) {
+						image(rain, x, y);
+					}
+		} image(img, x, y);
+	
+		
+		image(textBox, 180, 200);
+	
+		fill("white");
+		textSize(15);
+		textFont('Roboto Mono');
+		var s = "You just entered hole";
+		text(s, 85, 200);
+
+	} 
+} 
+
