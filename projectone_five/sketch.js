@@ -17,10 +17,11 @@ var gyozaImage;
 var mushX = 80;   
 var mushY = 100;
 
-// game physics
+// game physics;
+
 var groundY = 100;
 var GRAVITY = 2; // acceleration 2px per frame
-var shinYSpeed = 2;
+var shinYSpeed = 5;
 var shinIsJumping = false;
 
 var gyozaPositions = []; //add gyoza x values
@@ -42,11 +43,13 @@ function preload() {
 	devilHouse = loadImage("devil_house.png");
 	rain = loadImage("rain.gif");
 	textBox = loadImage("box.png");
+	textBoxTwo = loadImage("box_two.png");
 	hospital = loadImage("hole_central_hospital.png");
 	market = loadImage("holemarket.png");
 	light = loadImage("lighting.png");
 	tavern = loadImage("hungry_bug.png");
 	gyozaImage = loadImage("gyoza.png");
+	trash_bin = loadImage("trashbin.png");
 }
 
 function setup() {
@@ -55,6 +58,8 @@ function setup() {
 	shinY = height/2;
 	imageMode(CENTER);
 	
+	rain.delay(((width / rain.width) * (height / rain.height)) * rain.gifProperties.frames[0].delay);
+
 	mushTwo.delay(50);
 	mushThree.delay(50);
 }
@@ -119,12 +124,14 @@ function main() {
 	/*character movement*/
 }
 
-function setupHole() {
+function setupHole(fromMain) {
 
 	// saves shin map position
-	shinMainX = shinX;
-	shinMainY = shinY;
-
+	if (fromMain) {
+		shinMainX = shinX;
+		shinMainY = shinY;
+	}
+	
 	// move shin to game ground
 	shinX = 250;
 	shinY = height - groundY;
@@ -143,13 +150,39 @@ function setupHole() {
 
 function hole() {
 	background(15, 15, 15);
+
+
+		for (let x = 0; x <+ width; x += 160) {
+					for (let y = 0; y <= height; y += 160) {
+
+						image(rain, x, y);
+					}
+		}
 	noStroke();
 	fill("grey");
 	rect(0, height - groundY, width, groundY);
 	image(tavern, 200, height - 160);
-	image(light, 400, height - 190);
 	image(market, 650, height - 210);
 	image(hospital, 1200, height - 210);
+	image(light, 400, height - 200);
+	image(light, 870, height - 200);
+	image(light, 1550, height - 200);
+	image(trash_bin, 500, height - 80);
+	image(trash_bin, 1500, height - 100);
+
+
+
+	//fill(0);
+	//noStroke();
+	//rect(5, 5, 300, 100);
+	image(textBoxTwo, 190, 70);
+	fill("white");
+	textSize(20);
+	textFont('Roboto Mono');
+	var s = "Press spacebar to dodge the gyozas! One touch and the game is over!";
+	text(s, 50, 35, 300, 200);
+	
+
 
 
  	/* jumping and falling */
@@ -172,10 +205,16 @@ function hole() {
 
 	image(shinMask, shinX, shinY);
 
- 	for (let i = 0; i < gyozaPositions.lenght; i++){
+ 	for (let i = 0; i < gyozaPositions.length; i++){
  		let x = gyozaPositions[i];
  		gyoza(x);
- 		gyozaPositions[i] -= 5;
+ 		gyozaPositions[i] -= 8;
+
+
+ 		if (i == gyozaPositions.length - 1 && shinX > x) {
+ 			scene = 'win';
+
+ 		}
 
  	}
 
@@ -185,16 +224,19 @@ function hole() {
 
 function win() {
 
-	image(textBox, 180, 200);
+	fill(0);
+	noStroke();
+	rect(width/6, height/4, width/3 + width/3 - 50, height/4 + height/3);
+
 	fill("white");
 	textSize(100);
 	textFont('Roboto Mono');
 	var s = "You win!";
-	text(s, 70, 195);
+	text(s, width/3, height/2);
 
 	textSize(50);
 	var t = "Hit Enter to return to Map";
-	text(t, 70, 260);
+	text(t, width/3 - 150, height/2 + 100);
 
 	if (keyIsDown(ENTER)) {
 		setupMain();
@@ -203,20 +245,22 @@ function win() {
 
 
 function lose() {
+	fill(0);
+	noStroke();
+	rect(width/6, height/4, width/3 + width/3 - 50, height/4 + height/3);
 
-	image(textBox, 180, 200);
 	fill("white");
 	textSize(100);
 	textFont('Roboto Mono');
 	var s = "You lost!";
-	text(s, 70, 195);
+	text(s, width/3, height/2);
 
 	textSize(50);
 	var t = "Hit R to return to try again";
-	text(t, 70, 260);
+	text(t, width/3 - 150, height/2 + 100);
 
 	if (keyIsDown(82)) {
-		setupHole();
+		setupHole(false);
 	}
 }
 
@@ -233,8 +277,8 @@ function door(img, x, y) {
 		shinY + shinMask.height / 3 > y - shinDoor.height / 3 
 		) {	
 			background(0);
-				for (let x = 0; x <+ width; x += 196) {
-					for (let y = 0; y <= height; y += 196) {
+				for (let x = 0; x <+ width; x += 160) {
+					for (let y = 0; y <= height; y += 160) {
 						image(rain, x, y);
 					}
 		} image(img, x, y);
@@ -245,20 +289,21 @@ function door(img, x, y) {
 		fill("white");
 		textSize(18);
 		textFont('Roboto Mono');
-		var s = "You just entered hole";
+		var s = "You just entered Hole";
 		text(s, 70, 195);
 		textSize(15);
-		var t = "Hit H to visit hole";
+		var t = "Hit H to visit Hole";
 		text(t, 100, 220);
 
 		// H event
 		if (keyIsDown(72)) {
-			 setupHole();
+			 setupHole(true);
 		}
 
 	} 
 
 } 
+
 
 function shin() {
 	var shinIsRotating = false;
