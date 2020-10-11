@@ -14,7 +14,7 @@ var gyozaImage;
 var mush = [];
 var mushMove = [];
 var player;
-var portal;
+var door;
 
 
 function preload() {
@@ -69,7 +69,7 @@ function setup() {
 
 
  	player = new Player(width / 2, height / 2);
- 	portal = new Portal( 500, width / 2);
+ 	door = new Door( 500, width / 2);
 
 }
 
@@ -128,6 +128,6 @@ function draw() {
 	/* draw portal */
 
 	player.draw();
-	portal.draw();
+	door.draw();
 
 }

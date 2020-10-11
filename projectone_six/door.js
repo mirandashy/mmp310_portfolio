@@ -4,4 +4,8 @@ class Door extends GameObject {
 		this.img = devilHouse;
 		this.sceneToOpen = sceneToOpen; 
 	}
+
+	draw() {
+		image(this.img, this.x, this.y);
+	}
 }
