@@ -10,4 +10,17 @@ class GameObject {
 	draw() {
 		image(this.img, this.x, this.y);
 	}
+
+	collide(other) {
+		if (this.x - this.width/2 < other.x + other.width/2 &&
+			this.x + this.width/2 > other.x + other.width/2 &&
+			this.y - this.height/2 < other.y + other.height/2 &&
+			this.y + this.height/2 > other.y + other.width/2){
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+
 }

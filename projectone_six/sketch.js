@@ -42,6 +42,8 @@ function preload() {
 
 function setup() {
 	createCanvas(1630, 400);
+	textFont('Roboto Mono');
+	
 	imageMode(CENTER);
 
 	mushTwo.delay(50);
@@ -69,7 +71,7 @@ function setup() {
 
 
  	player = new Player(width / 2, height / 2);
- 	door = new Door( 500, width / 2);
+ 	door = new Door(devilHouse, 500, height / 2, "hole");
 
 }
 
@@ -116,7 +118,7 @@ function draw() {
 	if (player.isRotating) {
 		image(shinRotation, player.x, player.y); 
 	} else if (player.isRotatingLeft) {
-		image(player.isRotationLeft, player.x, player.y);
+		image(shinRotationLeft, player.x, player.y);
 	} else if (player.isRotatingUp) {
 		image(shinUp, player.x, player.y);
 	} else if (player.isRotatingDown) {
@@ -125,9 +127,13 @@ function draw() {
 		image(shinMask, player.x, player.y);
 	}
 
-	/* draw portal */
+
+	/* draw door */
+	door.draw();
+	if (door.collide(player)) {
+		door.drawEntrance();
+	}
 
 	player.draw();
-	door.draw();
 
 }
