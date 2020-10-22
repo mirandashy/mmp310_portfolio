@@ -11,10 +11,9 @@ var mushOne, mushTwo, mushThree;
 var shinDoor, devilHouse, rain, textBox;
 var gyozaImage; 
 
-var mush = [];
-var mushMove = [];
 var player;
 var door;
+var main, hole;
 
 
 function preload() {
@@ -49,91 +48,20 @@ function setup() {
 	mushTwo.delay(50);
 	mushThree.delay(50);
 
-	for (let x = 0; x <= width; x += 160) {
-		for (let y = 0; y <= height; y += 100) {
-			mushMove.push(new MushMove(mushOne, x, y + frameCount % 100));
-		}
-
-	}
-	for (var mushCounter = 0; mushCounter < 5; mushCounter += 1) {
-		mush.push(new GameObject(mushTwo, 80, mushCounter * 120));
-		mush.push(new GameObject(mushThree, 240, mushCounter * 120));
-		mush.push(new GameObject(mushTwo, 400, mushCounter * 120));
-		mush.push(new GameObject(mushThree, 560, mushCounter * 120));
-		mush.push(new GameObject(mushTwo, 720, mushCounter * 120));
-		mush.push(new GameObject(mushThree, 880, mushCounter * 120));
-		mush.push(new GameObject(mushTwo, 1040, mushCounter * 120));
-		mush.push(new GameObject(mushThree, 1200, mushCounter * 120));
-		mush.push(new GameObject(mushTwo, 1360, mushCounter * 120));
-		mush.push(new GameObject(mushThree, 1520, mushCounter * 120));
-		mush.push(new GameObject(mushTwo, 1680, mushCounter * 120));
- 	}
-
 
  	player = new Player(width / 2, height / 2);
  	door = new Door(devilHouse, 500, height / 2, "hole");
 
+ 	main = new MagicWorld();
+ 	hole = new HoleScene();
+
+
+
 }
 
 function draw() {
-	background(0);
 
+	main.draw();
 
-
-	for (let i = 0; i < mush.length; i++ ){
-		mush[i].draw();
-	}
-
-	for (let i = 0; i < mushMove.length; i++ ){
-		mushMove[i].draw();
-		mushMove[i].update();
-	}
-
-
- 	/* player keyboard events */
-
- 		player.isRotating = false;
-		player.isRotatingLeft = false;
-		player.isRotatingUp = false;
-		player.isRotatingDown= false;
-
-
-	if (keyIsDown(RIGHT_ARROW)) {
-		player.x += player.speed;
-		player.isRotating = true;
-
-	} else if (keyIsDown(LEFT_ARROW)) {
-		player.x -= player.speed;
-		player.isRotatingLeft = true;
-
-	} else if (keyIsDown(UP_ARROW)) {
-		player.y -= player.speed;
-		player.isRotatingUp = true;
-
-	} else if (keyIsDown(DOWN_ARROW)) {
-		player.y += player.speed;
-		player.isRotatingDown = true;
-	}
-
-	if (player.isRotating) {
-		image(shinRotation, player.x, player.y); 
-	} else if (player.isRotatingLeft) {
-		image(shinRotationLeft, player.x, player.y);
-	} else if (player.isRotatingUp) {
-		image(shinUp, player.x, player.y);
-	} else if (player.isRotatingDown) {
-		image(shinDown, player.x, player.y);
-	} else {
-		image(shinMask, player.x, player.y);
-	}
-
-
-	/* draw door */
-	door.draw();
-	if (door.collide(player)) {
-		door.drawEntrance();
-	}
-
-	player.draw();
 
 }
