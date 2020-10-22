@@ -6,10 +6,6 @@ class MapScene {
 		this.door = [];
 	}
 
-	setup() {
-
-	}
-
 	draw() {
 		background(0);
 
@@ -68,17 +64,17 @@ class MapScene {
 		/* draw door */
 
 	let enterDoor;
-	for (let i = 0; this.door.length; i ++) {
+	for (let i = 0; i < this.door.length; i ++) {
 		this.door[i].draw();
 
 		// detect collision between portal and player
 		if (this.door[i].collide(player)) {
-			this.door[i].drawText();
+			this.door[i].drawEntrance();
 
 
 			// user input
 			if (keyIsDown(72)) {
-				enterDoor = this.door[i].sceneToEnter;
+				enterDoor = this.door[i].sceneToOpen;
 			}
 		}
 

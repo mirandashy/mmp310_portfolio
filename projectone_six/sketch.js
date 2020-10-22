@@ -13,7 +13,8 @@ var gyozaImage;
 
 var player;
 var door;
-var main, hole;
+var scenes = {};
+var currentScene = "main";
 
 
 function preload() {
@@ -52,16 +53,19 @@ function setup() {
  	player = new Player(width / 2, height / 2);
  	door = new Door(devilHouse, 500, height / 2, "hole");
 
- 	main = new MagicWorld();
- 	hole = new HoleScene();
+ 	scenes.main = new MagicWorld();
+ 	scenes.hole = new HoleScene();
 
 
 
 }
 
+function changeScene(sceneName) {
+	currentScene = sceneName;
+	scenes[currentScene].setup();
+}
+
 function draw() {
-
-	main.draw();
-
+	scenes[currentScene].draw();
 
 }

@@ -23,9 +23,13 @@ class MagicWorld extends MapScene {
 			this.mush.push(new GameObject(mushTwo, 1680, mushCounter * 120));
  	}
 
- 	this.door.push(new Door(shinDoor, 500, height/2,"hole"));
+ 		this.door.push(new Door(shinDoor, 500, height/2,"hole"));
 
 
 
+	}
+
+	setup() {
+		
 	}
 }
