@@ -14,6 +14,7 @@ class Player extends GameObject {
 		this.isRotatingDown = false;
 
 		this.speed = 2;
+		this.ySpeed = 5;
 	}
 
 	draw() {

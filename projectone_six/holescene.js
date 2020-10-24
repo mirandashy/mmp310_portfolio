@@ -17,7 +17,6 @@ class HoleScene extends MapScene {
 	}
 
 setup() {
-	
 }
 
 }

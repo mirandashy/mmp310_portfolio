@@ -30,6 +30,9 @@ class MagicWorld extends MapScene {
 	}
 
 	setup() {
+
+		player.x = width/2 ;
+		player.y = height/ 2;
 		
 	}
 }

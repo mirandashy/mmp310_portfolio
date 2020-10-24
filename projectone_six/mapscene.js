@@ -81,7 +81,7 @@ class MapScene {
 	}
 
 	if (enterDoor) {
-		changeScene(enterDoor);
+		changeScene(enterDoor, currentScene);
 	}
 	
 	
