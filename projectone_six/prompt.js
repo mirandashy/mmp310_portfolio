@@ -13,7 +13,7 @@ class Prompt {
 	draw() {
 		fill(0);
 		noStroke();
-		rect(width/6, height/4, width/3 + width/3 - 50, height/4 + height/3);
+		rect(width/6, height/4, width/2.5 + width/3 - 50, height/4 + height/3);
 
 		fill("white");
 		textSize(100);
