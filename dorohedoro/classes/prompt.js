@@ -13,15 +13,15 @@ class Prompt {
 	draw() {
 		fill(0);
 		noStroke();
-		rect(width/6, height/4, width/2.5 + width/3 - 50, height/4 + height/3);
+		rect(width/6, height/4, width/2.5 + width/3 + 20, height/4 + height/3);
 
 		fill("white");
 		textSize(100);
 		textFont('Roboto Mono');
 		text(this.title, width/3, height/2);
 
-		textSize(50);
-		text(this.instruction, width/3 - 80, height/2 + 100);
+		textSize(40);
+		text(this.instruction, width/3 - 50 , height/2 + 100);
 
 
 		//event 

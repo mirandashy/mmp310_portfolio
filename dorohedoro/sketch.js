@@ -61,9 +61,9 @@ function setup() {
  	scenes.main = new MagicWorld();
  	scenes.hole = new HoleScene();
 
- 	scenes.hole = new PlatformScene(30, 40);
- 	scenes.win = new Prompt("You win", "Hit Enter to return to the Magic World");
- 	scenes.lose = new Prompt("You lost!", "Hit Enter to try again");
+ 	scenes.hole = new PlatformScene(10,20);
+ 	scenes.win = new Prompt("You win!", "Hit Enter to return to the Magic World");
+ 	scenes.lose = new Prompt("You lose!", "Hit Enter to try again");
 
 
 

@@ -9,8 +9,8 @@ class PlatformScene {
 		this.obstaclesPassedThree = 30;
 
 		this.groundY = 100;
-		this.gravity = 2;
-		this.acceleration = 0.001;
+		this.gravity = 2.5;
+		this.acceleration = 1;
 
 
 	}
@@ -24,7 +24,7 @@ class PlatformScene {
 
 		this.nextScene = nextScene; 
 
-		var n = (this.minObstacles, this.maxObstacles);
+		var n = random(this.minObstacles, this.maxObstacles);
 
 		for (let i = 0; i < n; i++) {
 			let x = random(width/2, width) + i * width / 2;
@@ -99,26 +99,15 @@ class PlatformScene {
 	 		if (player.x > obstacle.x && i >= this.obstaclesPassed) {
 	 			score += 10;
 	 			this.obstaclesPassed++;
+ 				 for (let j = this.obstaclesPassed; j < this.obstacles.length; j++) {
+    				this.obstacles[j].speed += this.acceleration;
+  				}
 	 			
 	 		}
 
 	 		if (i == this.obstacles.length - 1 && player.x > obstacle.x) {
 	 			changeScene('win', this.nextScene);
 	 		}
-
-
-	 		//acceleration
-	 	if (player.x > obstacle.x && i <= this.obstaclesPassedOne) {
-	 		obstacle.xSpeed = this.acceleration
-	 	} else if ( player.x > obstacle.x && this.obstaclesPassedOne <= i <= this.obstaclesPassedTwo) {
-	 		obstacle.xSpeed = this.acceleration * 2
-	 	} else if (player.x > obstacle.x && this.obstaclesPassedTwo <= i <= this.obstaclesPassedThree) {
-	 		obstacle.xSpeed = this.acceleration * 3
-	 	} else {
-
-	 	}
-
-
 	 	}
 
 		
