@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+Pro&display=swap');
+
+body {
+	background-color: black;
+	color: white;
+	font-family:'Source Sans Pro', sans-serif;
+}
+
+button {
+	all: inherit;
+	font-size: 1.25em;
+	border: 1.5px solid white;
+	border-radius: 0.25em;
+	padding: 0.5em;
+	cursor: pointer;
+} 
+
+button:hover {
+	border-color: yellow;
+	background-color: grey;
+}
+
+button:active {
+	color:yellow;
+	background-color: grey;
+}
+
+h1 {
+	color: yellow;
+}
+
+p {
+	font-size: 1.25em;
+	margin: 0;
+}
+
+#container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+#interface {
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+}
+
+button#start {
+	margin-left: auto;
+	margin-right: 1em;
+
+}
+
+.answers {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.option {
+	font-size: 2em;
+	border: 8px solid yellow;
+	background-color: grey;
+	flex-basis: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.5em;
+	cursor: pointer;
+	transition: background-color 200ms ease-in;
+}
+
+.option:hover{
+	background-color: black;
+}
