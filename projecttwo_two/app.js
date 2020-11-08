@@ -9,19 +9,23 @@ const endButton = document.getElementById('end');
 const message = document.getElementById('message');
 const quizContainer = document.getElementById('quiz');
 
+
+function preload() {
+	bg = loadImage("night_sky.png");
+}
 //quiz questions
 let questions = [];
 let currentQuestion = 0;
 let score = 0;
 
 questions.push(new Question("1 - What will be the right answer?", "This one.", ["Maybe this one.", "Neither of them."]));
-questions.push(new Question("2 - What will the dog named Pal have for dinner?", "You are Pal the dog.", ["Pal the dog doesn't exist.", "It's lunch time not dinner."]));
+questions.push(new Question("2 - Choose a scent.", "Magnolia.", ["Coffee.", "Lavander."]));
 questions.push(new Question("3 - Choose a color.", "Peacock.", ["Ash.", "Mulberry."]));
 questions.push(new Question("4 - Which number is the lucky one?", "13", ["3", "7"]));
 questions.push(new Question("5 - Choose a star.", "★", ["☆", "*"]));
-questions.push(new Question("6 - Which door will lead you to your favorite place?", "First one", ["Second one.", "Thrid one."]));
+questions.push(new Question("6 - Which door will lead you to your favorite place?", "First one.", ["Second one.", "Third one."]));
 questions.push(new Question("7 - Who is trying to talk with you?", "The ghost sitting on your left side.", ["Your spirit guide.", "No one."]));
-questions.push(new Question("8 - No question. Just select the word that is attracting you.", "Wanderlust.", ["Syzygy.", "Leitmotif."]));
+questions.push(new Question("8 - No question. Just select the word that you feel attracted to.", "Wanderlust.", ["Syzygy.", "Leitmotif."]));
 questions.push(new Question("9 - Which direction are you taking?", "Left.", ["Right.", "I'm not going anywhere."]));
 questions.push(new Question("10 - Choose one satellite.", "Phobos.", ["Deimos.", "Moon."]));
 console.log(questions);
@@ -46,6 +50,7 @@ nextButton.addEventListener('click', function() {
 
 endButton.addEventListener('click', function() {
 		quizContainer.textContent = '';
+		endButton.classList.add('disable');
 		message.textContent = `You got ${score} out of ${questions.length}!`;
 
 		if (score <= 4) {
@@ -65,7 +70,6 @@ function loadNextQuestion() {
 
 	let question = questions[currentQuestion].getHTML();
 	quizContainer.appendChild(question);
-	endButton.classList.add('disable');
 }
 
 function questionAnswered(isCorrect) {
@@ -75,6 +79,8 @@ function questionAnswered(isCorrect) {
 	} else {
 		message.textContent = "Wrong answer, sorry!"
 	}
+
+	// more questions
 	if (currentQuestion < questions.length - 1){
 		nextButton.classList.remove('disable');
 	} else {
