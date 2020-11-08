@@ -9,10 +9,6 @@ const endButton = document.getElementById('end');
 const message = document.getElementById('message');
 const quizContainer = document.getElementById('quiz');
 
-
-function preload() {
-	bg = loadImage("night_sky.png");
-}
 //quiz questions
 let questions = [];
 let currentQuestion = 0;
@@ -28,7 +24,6 @@ questions.push(new Question("7 - Who is trying to talk with you?", "The ghost si
 questions.push(new Question("8 - No question. Just select the word that you feel attracted to.", "Wanderlust.", ["Syzygy.", "Leitmotif."]));
 questions.push(new Question("9 - Which direction are you taking?", "Left.", ["Right.", "I'm not going anywhere."]));
 questions.push(new Question("10 - Choose one satellite.", "Phobos.", ["Deimos.", "Moon."]));
-console.log(questions);
 
 
 // events
