@@ -85,7 +85,7 @@ loader.load( ' js/scene.json', onLoad );
 function onLoad( tavern ) {
 
 	tavern.scale.set( 0.5, 0.5, 0.5);
-	tavern.rotation.set( -1.5708, 1.5708 , 1.5708  );
+	tavern.rotation.set( -1.5708, 1.5708, 1.5708 );
 	scene.add( tavern );
 	animate();
 }
