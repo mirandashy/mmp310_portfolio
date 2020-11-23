@@ -208,7 +208,7 @@
 			"depthSegments": 1
 		},
 		{
-			"uuid": "87BC1A1B-628A-420D-994B-B79A7E379728",
+			"uuid": "FB9A17FB-5B37-44E7-B6FC-DE478F034967",
 			"type": "PlaneBufferGeometry",
 			"width": 1,
 			"height": 1,
@@ -227,10 +227,10 @@
 		{
 			"uuid": "8D2335D7-9CC1-4A70-B4A9-F01D489DE5C9",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 12237498,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 12237498,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -247,10 +247,10 @@
 		{
 			"uuid": "92F3433E-6A01-4D50-B0E7-7AF6A768FAF2",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 16711680,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 16711680,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -267,10 +267,10 @@
 		{
 			"uuid": "86B84101-CB5B-447F-95A1-88D5A77A12FE",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 2377243,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 2377243,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -287,7 +287,7 @@
 		{
 			"uuid": "CAD11DBB-3C69-4E83-BE27-048707A06A07",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 994571,
 			"roughness": 1,
 			"metalness": 0,
 			"emissive": 462597,
@@ -305,10 +305,12 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "31CC8CF4-2AA5-42D3-9E41-A0A88ADDB8BE",
-			"type": "LineDashedMaterial",
+			"uuid": "9A7BC446-992D-4D25-A148-3533B894764A",
+			"type": "MeshStandardMaterial",
 			"color": 10878976,
-			"side": 2,
+			"roughness": 1,
+			"metalness": 0,
+			"emissive": 0,
 			"depthFunc": 3,
 			"depthTest": true,
 			"depthWrite": true,
@@ -319,18 +321,15 @@
 			"stencilFuncMask": 255,
 			"stencilFail": 7680,
 			"stencilZFail": 7680,
-			"stencilZPass": 7680,
-			"dashSize": 3,
-			"gapSize": 1,
-			"scale": 1
+			"stencilZPass": 7680
 		},
 		{
 			"uuid": "47DC7895-579C-4242-93E7-3A1E9A36F111",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 10724259,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 2377243,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -350,7 +349,7 @@
 			"color": 16777215,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 16777215,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -365,12 +364,12 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "B08FAA95-F240-4114-A66C-5CB2EF01C451",
+			"uuid": "899ECFA4-597F-444D-9388-BA80D8792B21",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 16711680,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 16711680,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -385,12 +384,10 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "391FEA8D-1392-4BB7-9CDC-6134D59A9FE8",
-			"type": "MeshStandardMaterial",
+			"uuid": "7E09141E-8DE1-48F8-B9DD-DC3AEF96EEBA",
+			"type": "MeshToonMaterial",
 			"color": 16777215,
-			"roughness": 1,
-			"metalness": 0,
-			"emissive": 15921906,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -405,12 +402,12 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "3D163ED8-53EE-40CD-B9C7-E0C811D8BD0D",
+			"uuid": "2FE4BE71-C6EA-44CC-AFB2-85A55BBE5D44",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 16711680,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 16711680,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -427,10 +424,10 @@
 		{
 			"uuid": "61E0223C-B8F7-42FD-8574-A7E2A4E3ACCD",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 16711680,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 16711680,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -450,7 +447,7 @@
 			"color": 16777215,
 			"roughness": 0,
 			"metalness": 0,
-			"emissive": 16777215,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -465,12 +462,9 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "8803DBE8-643A-435D-8830-369123A3605D",
-			"type": "MeshStandardMaterial",
-			"color": 16777215,
-			"roughness": 1,
-			"metalness": 0,
-			"emissive": 462597,
+			"uuid": "79BA1FA4-9861-4A5B-BAF8-AF8213E42ED3",
+			"type": "MeshBasicMaterial",
+			"color": 994571,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -490,7 +484,7 @@
 			"color": 8985601,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 7280385,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -527,10 +521,10 @@
 		{
 			"uuid": "E0D5948E-BB07-4414-8597-D159FEBEB832",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 8355671,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 8355671,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -547,10 +541,10 @@
 		{
 			"uuid": "1EE4F30C-ED6F-4DB9-B932-36C9A6DC9623",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 14211499,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 14211499,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -567,10 +561,10 @@
 		{
 			"uuid": "72737732-4AD5-45A0-B3AC-28E8DBD7F8A5",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 8355671,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 8355671,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -587,10 +581,10 @@
 		{
 			"uuid": "8F5C95BB-86BD-4E16-B40C-02D7AC72A297",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 8355671,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 8355671,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -607,10 +601,10 @@
 		{
 			"uuid": "D6A977DB-9B0B-4051-AC0F-323C0E9C676A",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 14211499,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 14210987,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -625,12 +619,9 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "301EE075-2D0E-4606-BF6D-3ED35235F67C",
-			"type": "MeshStandardMaterial",
-			"color": 16777215,
-			"roughness": 1,
-			"metalness": 0,
-			"emissive": 462597,
+			"uuid": "13A3C5DB-17A1-4B84-A686-BC6CED5DD01E",
+			"type": "MeshBasicMaterial",
+			"color": 994571,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -647,10 +638,10 @@
 		{
 			"uuid": "027A2924-6F11-4A57-87C0-4E10F165B2BE",
 			"type": "MeshStandardMaterial",
-			"color": 16777215,
+			"color": 10724259,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 10724259,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -665,12 +656,9 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "F0B886B3-AB97-4EED-AA30-6B6B722C62BF",
-			"type": "MeshStandardMaterial",
-			"color": 16777215,
-			"roughness": 1,
-			"metalness": 0,
-			"emissive": 462597,
+			"uuid": "B360D0FB-B4B5-4E95-88F1-BBAA175EA633",
+			"type": "MeshBasicMaterial",
+			"color": 994571,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -690,7 +678,7 @@
 			"color": 14537904,
 			"roughness": 1,
 			"metalness": 0,
-			"emissive": 14210987,
+			"emissive": 0,
 			"side": 2,
 			"depthFunc": 3,
 			"depthTest": true,
@@ -705,9 +693,12 @@
 			"stencilZPass": 7680
 		},
 		{
-			"uuid": "21867570-72BE-4457-96E2-914C9E8C3954",
-			"type": "LineDashedMaterial",
+			"uuid": "69638042-B94D-4E84-84E9-52241E901CAF",
+			"type": "MeshStandardMaterial",
 			"color": 12330497,
+			"roughness": 1,
+			"metalness": 0,
+			"emissive": 0,
 			"depthFunc": 3,
 			"depthTest": true,
 			"depthWrite": true,
@@ -718,10 +709,7 @@
 			"stencilFuncMask": 255,
 			"stencilFail": 7680,
 			"stencilZFail": 7680,
-			"stencilZPass": 7680,
-			"dashSize": 3,
-			"gapSize": 1,
-			"scale": 1
+			"stencilZPass": 7680
 		},
 		{
 			"uuid": "8876223B-4C9E-485E-B627-61BE500BCF48",
@@ -774,6 +762,8 @@
 				"uuid": "F976585B-3BBB-4DAE-B8D3-0469BF28CCA7",
 				"type": "Group",
 				"name": "Group",
+				"castShadow": true,
+				"receiveShadow": true,
 				"layers": 1,
 				"matrix": [0,0.004074,0.999992,0,0,0.999992,-0.004074,0,-1,0,0,0,0,0,0,1],
 				"children": [
@@ -1108,7 +1098,7 @@
 						"layers": 1,
 						"matrix": [0.052929,1.34676,-0.00216,0,0.039825,0.010066,7.250716,0,0.999214,-0.039279,-0.005434,0,15.042792,7.751471,4.448859,1],
 						"geometry": "E4D391E7-46F1-47AA-A27E-195C8EADAE31",
-						"material": "31CC8CF4-2AA5-42D3-9E41-A0A88ADDB8BE"
+						"material": "9A7BC446-992D-4D25-A148-3533B894764A"
 					},
 					{
 						"uuid": "7EA5A8B0-7FDE-439E-A9F1-11FB166F31EE",
@@ -1135,7 +1125,7 @@
 						"layers": 1,
 						"matrix": [1.753582,0,0,0,0,2.248654,0,0,0,0,0.89101,0,5.749657,4.302019,0.863813,1],
 						"geometry": "2FF4D701-59B6-4346-A539-6EB5168A8BF8",
-						"material": "B08FAA95-F240-4114-A66C-5CB2EF01C451"
+						"material": "899ECFA4-597F-444D-9388-BA80D8792B21"
 					},
 					{
 						"uuid": "2961FB49-C80C-43C5-A30F-3E7DA6974A6B",
@@ -1144,7 +1134,7 @@
 						"layers": 1,
 						"matrix": [0.641457,0,0,0,0,1,0,0,0,0,1,0,12.796373,1.473257,0.825203,1],
 						"geometry": "2BE1F7F9-26A6-4FB2-ABB8-F92045030930",
-						"material": "391FEA8D-1392-4BB7-9CDC-6134D59A9FE8"
+						"material": "7E09141E-8DE1-48F8-B9DD-DC3AEF96EEBA"
 					},
 					{
 						"uuid": "F0C1273D-D6DE-405B-9C1A-2A085826BF7F",
@@ -1153,7 +1143,7 @@
 						"layers": 1,
 						"matrix": [1.76189,0.578699,0.111486,0,-0.096,0.295184,-0.015075,0,-0.035767,0.013624,0.494531,0,5.659828,1.375913,0.800685,1],
 						"geometry": "9335229B-A4DF-46C0-867D-87F80E84EB3F",
-						"material": "3D163ED8-53EE-40CD-B9C7-E0C811D8BD0D"
+						"material": "2FE4BE71-C6EA-44CC-AFB2-85A55BBE5D44"
 					},
 					{
 						"uuid": "CC25C4C9-18D1-4D88-B058-F6595DC1E37E",
@@ -1180,7 +1170,7 @@
 						"layers": 1,
 						"matrix": [3.625537,0,0,0,0,0.521637,0,0,0,0,1,0,11.624092,1.859446,0.906995,1],
 						"geometry": "B90C85D1-8528-4750-9438-57ABF9822D87",
-						"material": "8803DBE8-643A-435D-8830-369123A3605D"
+						"material": "79BA1FA4-9861-4A5B-BAF8-AF8213E42ED3"
 					},
 					{
 						"uuid": "F0484762-0046-423F-BA22-2460045582DD",
@@ -1385,7 +1375,7 @@
 								"layers": 1,
 								"matrix": [3.096469,0,0,0,0,2.827917,0,0,0,0,1.723298,0,11.583149,3.473922,0.805434,1],
 								"geometry": "ADD89A0F-6588-420B-9D1E-0B08CDCC9065",
-								"material": "301EE075-2D0E-4606-BF6D-3ED35235F67C"
+								"material": "13A3C5DB-17A1-4B84-A686-BC6CED5DD01E"
 							},
 							{
 								"uuid": "2FE2C1B6-DECD-4AE7-A7CC-0462431635A7",
@@ -1404,7 +1394,7 @@
 						"layers": 1,
 						"matrix": [2.879595,0,0,0,0,6.106539,0,0,0,0,0.760246,0,8.229501,2.707559,0.844177,1],
 						"geometry": "0812B5A4-97F7-4621-8C89-FD43D31BB888",
-						"material": "F0B886B3-AB97-4EED-AA30-6B6B722C62BF"
+						"material": "B360D0FB-B4B5-4E95-88F1-BBAA175EA633"
 					},
 					{
 						"uuid": "431553D7-440E-43AA-A63F-97EE14087B4E",
@@ -1431,7 +1421,7 @@
 						"layers": 1,
 						"matrix": [11.229317,0,0,0,0,8.92187,0,0,0,0,6.940291,0,9.251184,3.92784,4.474643,1],
 						"geometry": "96CD071A-00B2-4C3C-9F24-8409C6B937D6",
-						"material": "21867570-72BE-4457-96E2-914C9E8C3954"
+						"material": "69638042-B94D-4E84-84E9-52241E901CAF"
 					},
 					{
 						"uuid": "B8D772BF-AA4F-467A-A4EF-815774CB9797",
@@ -1453,9 +1443,11 @@
 								"uuid": "1CD0A3E4-8F68-45FE-8D32-663C0327C743",
 								"type": "Mesh",
 								"name": "Plane",
+								"castShadow": true,
+								"receiveShadow": true,
 								"layers": 1,
 								"matrix": [11.723862,0,0,0,0,2.396175,0,0,0,0,16.272115,0,-1.025284,1.10598,-4.984518,1],
-								"geometry": "87BC1A1B-628A-420D-994B-B79A7E379728",
+								"geometry": "FB9A17FB-5B37-44E7-B6FC-DE478F034967",
 								"material": "8876223B-4C9E-485E-B627-61BE500BCF48"
 							},
 							{
@@ -1468,6 +1460,16 @@
 								"material": "C35613A5-5D69-4940-9517-0F2E36CFBFF5"
 							}]
 					}]
+			},
+			{
+				"uuid": "5611BB1B-72E9-46D2-A6F5-C45AD56F1E62",
+				"type": "HemisphereLight",
+				"name": "HemisphereLight",
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,18.55701,15.834647,17.481644,1],
+				"color": 14935496,
+				"intensity": 1,
+				"groundColor": 13066240
 			}]
 	}
 }
