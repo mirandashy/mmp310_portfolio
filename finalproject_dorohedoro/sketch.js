@@ -3,14 +3,30 @@
 	object oriented version
 	classes and objects
 
-*/
+*/ 
+/*characters var */
 var shinMask, shinRotation, shinRotationLeft, shinUp, shinDown;
 var noiMask, kaimanMask, nikaidoMask;
 
+//var shinChoice, noiChoice, nikaidoChoice, kaimanChoice;
+//var choice = 'none';
+
 var startGameTab;
 var selectTab;
-var arrowL, arrowR;
-var portal; 
+
+/*arrow var */
+//var arrowL, arrowR;
+
+//var arrowRXOne = width/3 + 150;
+//var arrowLXOne = width/ 3  - 150;
+
+//var arrowRXTwo = width/3 * 2 + 150;
+//var arrowLXTwo = width/ 3 * 2 - 150;
+
+//var arrowY = height/ 2;
+
+
+var portal = [];
 
 var mushOne, mushTwo, mushThree;
 
@@ -24,7 +40,8 @@ var main;
 //var display;
 //var scenes = {};
 var currentScene = "main";
-var character;
+var character = [];
+var scene;
 
 
 
@@ -41,8 +58,14 @@ function preload() {
 	arrowR = loadImage("images/arrow_right.png");
 
 	hospital = loadImage("images/hole_central_hospital.png");
+	hospitalInside = loadImage("images/hospital_intern.png");
+
 	market = loadImage("images/holemarket.png");
+
 	tavern = loadImage("images/hungry_bug.png");
+	tavernInside = loadImage("images/tavern_inside.png");
+
+
 	
 
 
@@ -77,6 +100,9 @@ function setup() {
 
 	main = new EntryScene(); 
 	characters = new CharactersScene();
+	holeScene = new HoleScene();
+	tavernScene = new TavernScene();
+	hospitalScene = new HospitalScene();
 
 	//mushTwo.delay(50);
 	//mushThree.delay(50);
@@ -84,13 +110,9 @@ function setup() {
 
  	player = new Player(width / 2, height / 2);
 
- 		//this.background.push(new GameObject(hospital, 1200, height - 210));
-		//this.background.push(new GameObject(market, 650, height - 210));
-		//this.background.push(new GameObject(tavern, 200, height - 160));
+ 		
 
-		portal.push(new Portal(hospital, 1200, height- 210, "hospital intern"));
-		portal.push(new Portal(market, 1200, height- 210, "market intern"));
-		portal.push(new Portal(taver, 1200, height- 210, "tavern intern"));
+		
 		//this.background.push(new GameObject(light, 400, height - 200));
 		//this.background.push(new GameObject(light, 870, height - 200));
 		//this.background.push(new GameObject(light, 1550, height - 200));
@@ -116,18 +138,45 @@ function setup() {
 	//scenes[currentScene].setup(nextScene);
 //}
 
-//function mousePressed() {
-	//if ( character = shinMask ){
-		//ellipse(width/2, height/2, 10, 10)
+function mousePressed() {
+	if ( character = shinMask ){ 
+		fill(255);
+  		rect(25, 25, 200, 200);
 		//image(selectTab, width/2, height/2 );
-	//} else {
+	} else {
+		fill(0);
+  		rect(25, 25, 200, 200);
 
-	//}
+	}
 
-//}
+}
 
 function draw() {
-	characters.draw();
+	hospitalScene.draw();
+
+	//var shinChoice = false;
+	//var noiChoice = false;
+	//var nikaidoChoice = false;
+	//var kaimanChoice = false;
+
+	//if (mouseIsPressed) {
+	//	return true;
+	//} else {
+	//	return false;
+	//} 
+
+
+	//if (choice == 'shinChoice') {
+	//	scene = 'holeScene';
+	//} else if (choice == 'noiChoice') {
+	//	scene = 'holeScene';
+	//} else if (choice == 'nikaidoChoice') {
+	//	scene = 'mgicWorld';
+	//} else if (choice == 'kaimanChoice') {
+	//	scene = 'magicWorld';
+	//} else {
+	//	choice = 'none';
+	//}
 
 
 	// player keyboard //
@@ -157,7 +206,7 @@ function draw() {
 	}
 
 
-	player.draw();
+	//player.draw();
 	//scenes[currentScene].draw();
 	//display.draw();
 

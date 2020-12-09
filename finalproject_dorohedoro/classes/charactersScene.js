@@ -4,7 +4,7 @@ class CharactersScene {
 
 
 		this.characters.push(new GameObject(shinMask, width/ 3, height/ 2));
-		this.characters.push(new GameObject(noiMask, width/ 3, height/ 2));
+		//this.characters.push(new GameObject(noiMask, width/ 3, height/ 2));
 		this.characters.push(new GameObject(arrowL,width/ 3  - 150, height/ 2));
 		this.characters.push(new GameObject(arrowR,width/ 3 + 150, height/ 2));
 
