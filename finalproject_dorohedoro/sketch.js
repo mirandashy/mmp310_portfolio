@@ -104,7 +104,7 @@ function setup() {
 	createCanvas(1630, 400);
 	textFont('Roboto Mono');
 	
-	imageMode(CENTER);
+	//imageMode(CENTER);
 
 	main = new EntryScene(); 
 	holeScene = new HoleScene();
@@ -158,7 +158,7 @@ function setup() {
 //}
 
 function mousePressed() {
-	characters.mousePressed();
+	currentScene.mousePressed();
 }
 
 function draw() {

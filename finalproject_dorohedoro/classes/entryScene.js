@@ -7,8 +7,6 @@ class EntryScene {
 		
 		this.tab.push(new GameObject(startGameTab, width/2, height/2 + 50));
 
-		
-
 	}
 
 	setup() {
@@ -23,9 +21,11 @@ class EntryScene {
 		}
 	}
 	mousePressed() {
-		if (mouseX > this.x && mouseX < this.x + this.tab.width &&
-			mouseY > this.y  && mouseY < this.y + this.tab.height ) {
+
+		if (mouseX > this.x && mouseX < this.x + this.tab[0].width &&
+            mouseY > this.y  && mouseY < this.y + this.tab[0].height ) {
 			currentScene = this.characters;
+			
 			}
 		
 	
