@@ -127,7 +127,7 @@ function setup() {
 
  	player = new Player(width / 2, height / 2);
 
- 	currentScene = characters;
+ 	currentScene = main;
 
  		
 
@@ -191,6 +191,9 @@ function draw() {
 		portal[i].draw();
 	}
 
+//document.addEventListener('mousemove', (event) => {
+//	console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
+//});
 
 	//player.draw();
 	//scenes[currentScene].draw();
