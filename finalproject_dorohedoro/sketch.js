@@ -39,7 +39,8 @@ var main;
 //var score = 0;
 //var display;
 //var scenes = {};
-var currentScene = "main";
+var currentScene;
+var currentCharacter; 
 var character = [];
 var scene;
 
@@ -53,17 +54,24 @@ function preload() {
 	nikaidoMask = loadImage("images/nikaido_mask.gif");
 
 	startGameTab = loadImage("images/start_game_tab.gif");
-	selectTab = loadImage("images/select_tab.gif");
-	arrowL = loadImage("images/arrow_left.png");
-	arrowR = loadImage("images/arrow_right.png");
 
 	hospital = loadImage("images/hole_central_hospital.png");
 	hospitalInside = loadImage("images/hospital_intern.png");
 
 	market = loadImage("images/holemarket.png");
+	marketInside = loadImage("images/central_intern.png");
 
 	tavern = loadImage("images/hungry_bug.png");
 	tavernInside = loadImage("images/tavern_inside.png");
+
+	enMansion = loadImage("images/en_mainson.png");
+	enMansionInside = loadImage("images/en_maison_interior.png");	
+
+	trainingSchool = loadImage("images/training_school.png");
+	trainingSchoolInside = loadImage("images/school_interior.png");	
+
+	turkeyHouse = loadImage("images/turkey_house_outside.png");
+	turkeyHouseInside = loadImage("images/turkey_house.png");	
 
 
 	
@@ -99,16 +107,27 @@ function setup() {
 	imageMode(CENTER);
 
 	main = new EntryScene(); 
-	characters = new CharactersScene();
 	holeScene = new HoleScene();
+	magicScene  = new MagicScene();
+
 	tavernScene = new TavernScene();
 	hospitalScene = new HospitalScene();
+	marketScene = new MarketScene();
+
+	schoolScene = new SchoolScene();
+	turkeyHouseScene = new TurkeyHouseScene();
+	enScene = new EnScene();
+
+
+	characters = new CharactersScene();
 
 	//mushTwo.delay(50);
 	//mushThree.delay(50);
 
 
  	player = new Player(width / 2, height / 2);
+
+ 	currentScene = characters;
 
  		
 
@@ -139,44 +158,11 @@ function setup() {
 //}
 
 function mousePressed() {
-	if ( character = shinMask ){ 
-		fill(255);
-  		rect(25, 25, 200, 200);
-		//image(selectTab, width/2, height/2 );
-	} else {
-		fill(0);
-  		rect(25, 25, 200, 200);
-
-	}
-
+	characters.mousePressed();
 }
 
 function draw() {
-	hospitalScene.draw();
-
-	//var shinChoice = false;
-	//var noiChoice = false;
-	//var nikaidoChoice = false;
-	//var kaimanChoice = false;
-
-	//if (mouseIsPressed) {
-	//	return true;
-	//} else {
-	//	return false;
-	//} 
-
-
-	//if (choice == 'shinChoice') {
-	//	scene = 'holeScene';
-	//} else if (choice == 'noiChoice') {
-	//	scene = 'holeScene';
-	//} else if (choice == 'nikaidoChoice') {
-	//	scene = 'mgicWorld';
-	//} else if (choice == 'kaimanChoice') {
-	//	scene = 'magicWorld';
-	//} else {
-	//	choice = 'none';
-	//}
+	currentScene.draw();
 
 
 	// player keyboard //
