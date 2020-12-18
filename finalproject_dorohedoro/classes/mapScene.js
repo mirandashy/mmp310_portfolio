@@ -15,21 +15,21 @@ class MapScene {
 		/* draw door */
 
 	//let enterDoor;
-	//for (let i = 0; i < this.door.length; i ++) {
-		//this.door[i].draw();
+	for (let i = 0; i < this.portal.length; i ++) {
+		this.portal[i].draw();
 
 		// detect collision between portal and player
-		//if (this.door[i].collide(player)) {
-			//this.door[i].drawEntrance();
+		 if (this.portal[i].collide(player)) {
+			this.portal[i].drawText();
 
 
 			// user input
 			//if (keyIsDown(72)) {
 			//	enterDoor = this.door[i].sceneToOpen;
 			//}
-		//}
+		}
 
-	//}
+	}
 
 	//if (enterDoor) {
 	//	changeScene(enterDoor, currentScene);

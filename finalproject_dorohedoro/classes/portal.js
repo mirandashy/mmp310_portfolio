@@ -1,5 +1,7 @@
-class Portal {
-	constructor(img, x, y, sceneToOpen) {
+class Portal extends GameObject{
+	constructor(message, img, x, y, sceneToOpen) {
+		super();
+		this.message = message;
 		this.img = img;
 		this.x = x;
 		this.y = y;
@@ -10,16 +12,16 @@ class Portal {
 		image(this.img, this.x, this.y);
 	}
 
-	collide(other) {
-		if (this.x - this.width / 3 < other.x + other.width / 3 &&
-			this.x + this.width / 3 > other.x - other.width / 3 &&
-			this.y - this.height / 3 < other.y + other.height / 3 &&
-			this.y + this.height / 3 > other.y - other.width / 3){
-			return true;
-		} else {
-		return false;
-		}
+
+
+
+	drawText() {
+		fill(255);
+		textSize(20);
+		textAlign(CENTER, CENTER);
+		text(this.message, this.x - this.width, this.y - this.height/2, this.width, this.height);
 
 	}
+
 
 }

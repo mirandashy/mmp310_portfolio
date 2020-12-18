@@ -22,9 +22,9 @@ class EntryScene {
 	}
 	mousePressed() {
 
-		if (mouseX > this.x && mouseX < this.x + this.tab[0].width &&
-            mouseY > this.y  && mouseY < this.y + this.tab[0].height ) {
-			currentScene = this.characters;
+		if (mouseX > this.x - 200 && mouseX < this.x + this.tab[0].width &&
+            mouseY > this.y - 200   && mouseY < this.y + this.tab[0].height ) {
+			currentScene = characters;
 			
 			}
 		

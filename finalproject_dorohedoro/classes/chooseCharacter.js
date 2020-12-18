@@ -13,10 +13,12 @@ class ChooseCharacter {
 	}
 
 	mousePressed() {
-		if (mouseX > this.x && mouseX < this.x + this.img.width &&
-			mouseY > this.y && mouseY < this.y + this.img.height) {
+		if (mouseX > this.x - 200 && mouseX < this.x + this.img.width &&
+			mouseY > this.y - 200 && mouseY < this.y + this.img.height) {
 			player.img = this.characterName;
 			currentScene = this.sceneToOpen;
 		}
 	}
+
+	
 }

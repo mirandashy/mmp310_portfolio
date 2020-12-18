@@ -8,22 +8,7 @@
 var shinMask, shinRotation, shinRotationLeft, shinUp, shinDown;
 var noiMask, kaimanMask, nikaidoMask;
 
-//var shinChoice, noiChoice, nikaidoChoice, kaimanChoice;
-//var choice = 'none';
-
 var startGameTab;
-var selectTab;
-
-/*arrow var */
-//var arrowL, arrowR;
-
-//var arrowRXOne = width/3 + 150;
-//var arrowLXOne = width/ 3  - 150;
-
-//var arrowRXTwo = width/3 * 2 + 150;
-//var arrowLXTwo = width/ 3 * 2 - 150;
-
-//var arrowY = height/ 2;
 
 
 var portal = [];
@@ -43,6 +28,7 @@ var currentScene;
 var currentCharacter; 
 var character = [];
 var scene;
+var img;
 
 
 
@@ -77,15 +63,10 @@ function preload() {
 	
 
 
-	//shinRotation = loadImage("images/shin_mask_rotation.gif");
-	//shinRotationLeft = loadImage("images/shin_mask_rotation_left.gif");
-	//shinDown = loadImage("images/shin_mask_up.gif");
-	//shinUp = loadImage("images/shin_mask_down.gif");
 	mushOne = loadImage("images/mushroomone.gif");
 	mushTwo = loadImage("images/mushroomtwo_reverse.gif");
 	mushThree = loadImage("images/mushroomthree.gif");
-	//shinDoor = loadImage("images/shin_door.png");
-	//devilHouse = loadImage("images/devil_house.png");
+
 	rain = loadImage("images/rain.gif");
 	textBox = loadImage("images/box.png");
 	textBoxTwo = loadImage("images/box_two.png");
@@ -104,7 +85,7 @@ function setup() {
 	createCanvas(1630, 400);
 	textFont('Roboto Mono');
 	
-	//imageMode(CENTER);
+	imageMode(CENTER);
 
 	main = new EntryScene(); 
 	holeScene = new HoleScene();
@@ -127,22 +108,9 @@ function setup() {
 
  	player = new Player(width / 2, height / 2);
 
- 	currentScene = characters;
-
- 		
-
-		
-		//this.background.push(new GameObject(light, 400, height - 200));
-		//this.background.push(new GameObject(light, 870, height - 200));
-		//this.background.push(new GameObject(light, 1550, height - 200));
-		//this.background.push(new GameObject(trash_bin, 500, height - 80));
-		//this.background.push(new GameObject(trash_bin, 1500, height - 100));
- 	//door = new Door(devilHouse, 500, height / 2, "hole");
+ 	currentScene = main;
 
  	//display = new Display();
-
- 	//scenes.main = new MagicWorld();
- 	//scenes.hole = new HoleScene();
 
  	//scenes.hole = new PlatformScene(10,20);
  	//scenes.win = new Prompt("You win!", "Hit Enter to return to the Magic World");
@@ -186,14 +154,6 @@ function draw() {
 		player.isWalking = true;
 	}
 
-	/* draw portals */
-	for (let i = 0; i < portal.length; i++) {
-		portal[i].draw();
-	}
-
-//document.addEventListener('mousemove', (event) => {
-//	console.log(`Mouse X: ${event.clientX}, Mouse Y: ${event.clientY}`);
-//});
 
 	//player.draw();
 	//scenes[currentScene].draw();
