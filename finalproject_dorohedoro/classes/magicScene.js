@@ -9,6 +9,7 @@ class MagicScene extends MapScene {
 
 
 	draw() {
+		background('black');
 
 		noStroke();
 		fill("grey");
@@ -17,6 +18,8 @@ class MagicScene extends MapScene {
 		for (let i = 0; i < this.background.length; i ++) {
 			this.background[i].draw();
 		}
+
+		player.draw();
 	}
 
 }
