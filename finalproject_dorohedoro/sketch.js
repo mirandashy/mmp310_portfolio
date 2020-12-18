@@ -127,7 +127,7 @@ function setup() {
 
  	player = new Player(width / 2, height / 2);
 
- 	currentScene = main;
+ 	currentScene = magicScene;
 
  		
 

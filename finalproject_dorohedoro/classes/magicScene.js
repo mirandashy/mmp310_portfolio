@@ -2,9 +2,9 @@ class MagicScene extends MapScene {
 	constructor(){
 		super();
 
-		this.background.push(new Portal(trainingSchool, 250, height - 160, 'schoolScene'));
-		this.background.push(new Portal(turkeyHouse, 800, height - 190, 'turkeyHouseScene'));
-		this.background.push(new Portal(enMansion, 1300, height - 200, 'enScene'));
+		this.background.push(new Portal(trainingSchool, 200, height / 2 - 100, 'schoolScene'));
+		this.background.push(new Portal(turkeyHouse, 800, height / 2 - 80, 'turkeyHouseScene'));
+		this.background.push(new Portal(enMansion, 1200, height / 2 - 200, 'enScene'));
 	}
 
 
