@@ -3,12 +3,12 @@ class CharactersScene {
 		this.characters = [];
 
 
-		this.characters.push(new ChooseCharacter(shinMask, width/ 3 - 250 , height/ 2, shinMask, holeScene));
-		this.characters.push(new ChooseCharacter(noiMask, width/ 3, height/ 2, noiMask, holeScene));
+		this.characters.push(new ChooseCharacter(shinMask, width/ 3 - 200 , height/ 2 - 80 , shinMask, holeScene));
+		this.characters.push(new ChooseCharacter(noiMask, width/ 3 + 30, height/ 2 - 80, noiMask, holeScene));
 	
 
-		this.characters.push(new ChooseCharacter(nikaidoMask,width/ 3 * 2 + 250 , height/ 2, nikaidoMask, magicScene));
-		this.characters.push(new ChooseCharacter(kaimanMask,width/ 3 * 2, height/ 2, kaimanMask, magicScene));
+		this.characters.push(new ChooseCharacter(nikaidoMask, width/ 3 * 2 + 150 , height/ 2 - 100, nikaidoMask, magicScene));
+		this.characters.push(new ChooseCharacter(kaimanMask, width/ 3 * 2 - 30, height/ 2 - 100, kaimanMask, magicScene));
 	
 	}
 
