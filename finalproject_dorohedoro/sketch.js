@@ -15,8 +15,9 @@ var portals = [];
 
 var mushOne, mushTwo, mushThree;
 
-var shinDoor, devilHouse, rain, textBox;
+//var shinDoor, devilHouse, rain, textBox;
 var gyozaImage; 
+var hammerImage;
 
 var player;
 var main;
@@ -86,6 +87,8 @@ function preload() {
 	light = loadImage("images/lighting.png");
 	
 	gyozaImage = loadImage("images/gyoza.png");
+	hammerImage = loadImage("images/hammer.gif");
+
 	trash_bin = loadImage("images/trashbin.png");
 	heartLives = loadImage("images/heart_lives.png");
 }
@@ -100,13 +103,23 @@ function setup() {
 	main = new EntryScene(); 
 
 
-	tavernScene = new TavernScene();
+	tavernScene = new TavernScene()
+	tavernScene = new PlatformScene(tavernInside, 4, 7);
+
 	hospitalScene = new HospitalScene();
+	hospitalScene = new PlatformScene(hospitalInside, 8, 12);
+
 	marketScene = new MarketScene();
+	marketScene = new PlatformScene(marketInside, 13, 16);
 
 	schoolScene = new SchoolScene();
+	schoolScene = new PlatformScene(trainingSchoolInside, 4, 7);
+
 	turkeyHouseScene = new TurkeyHouseScene();
+	turkeyHouseScene = new PlatformScene(turkeyHouseInside, 8, 12);
+
 	enScene = new EnScene();
+	enScene = new PlatformScene(enMansionInside, 13, 16);
 
 	holeScene = new HoleScene();
 	magicScene  = new MagicScene();
@@ -120,7 +133,8 @@ function setup() {
 
  	player = new Player(width / 2, height / 2);
 
- 	currentScene = characters;
+
+ 	currentScene = tavernScene;
 
  	//display = new Display();
 
