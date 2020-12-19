@@ -6,7 +6,4 @@ class MarketScene extends PlatformScene {
 		this.background.push(new GameObject(marketInside, width/2 , height/ 2));
 	}
 
-	setup() {
-
-	}
 }

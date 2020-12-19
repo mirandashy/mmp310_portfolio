@@ -17,6 +17,7 @@ class Portal extends GameObject{
 		textSize(20);
 		textAlign(CENTER, CENTER);
 		text(this.message, this.x - this.width, this.y - this.height/2, this.width, this.height);
+		text("Hit Enter to enter the room", 50, 60, 100, 100);
 
 	}
 

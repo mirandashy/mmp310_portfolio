@@ -5,7 +5,5 @@ class SchoolScene extends PlatformScene {
 
 		this.background.push(new GameObject(trainingSchoolInside, width/2 , height/ 2));
 	}
-	setup() {
-
-	}
+	
 }

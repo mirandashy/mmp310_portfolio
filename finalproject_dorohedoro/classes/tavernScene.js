@@ -6,7 +6,4 @@ class TavernScene extends PlatformScene {
 		this.background.push(new GameObject(tavernInside, width/2 , height/ 2));
 	}
 
-setup() {
-
-	}
 }

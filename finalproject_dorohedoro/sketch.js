@@ -103,23 +103,20 @@ function setup() {
 	main = new EntryScene(); 
 
 
-	tavernScene = new TavernScene()
-	tavernScene = new PlatformScene(tavernInside, 4, 7);
+	tavernScene = new TavernScene(tavernInside, 4, 7)
 
-	hospitalScene = new HospitalScene();
-	hospitalScene = new PlatformScene(hospitalInside, 8, 12);
+	hospitalScene = new HospitalScene(hospitalInside, 8, 12);
 
-	marketScene = new MarketScene();
-	marketScene = new PlatformScene(marketInside, 13, 16);
 
-	schoolScene = new SchoolScene();
-	schoolScene = new PlatformScene(trainingSchoolInside, 4, 7);
+	marketScene = new MarketScene(marketInside, 13, 16);
 
-	turkeyHouseScene = new TurkeyHouseScene();
-	turkeyHouseScene = new PlatformScene(turkeyHouseInside, 8, 12);
 
-	enScene = new EnScene();
-	enScene = new PlatformScene(enMansionInside, 13, 16);
+	schoolScene = new SchoolScene(trainingSchoolInside, 4, 7);
+
+
+	turkeyHouseScene = new TurkeyHouseScene(turkeyHouseInside, 8, 12);
+
+	enScene = new EnScene(enMansionInside, 13, 16);
 
 	holeScene = new HoleScene();
 	magicScene  = new MagicScene();
@@ -135,7 +132,7 @@ function setup() {
 
 
  	currentScene = enScene;
-
+ 	currentScene.setup();
  	//display = new Display();
 
  	//scenes.hole = new PlatformScene(10,20);
