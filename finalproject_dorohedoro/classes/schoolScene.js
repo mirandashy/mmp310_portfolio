@@ -3,12 +3,4 @@ class SchoolScene extends PlatformScene {
 		super(img,minObstacles, maxObstacles);
 		this.background.push(new GameObject(trainingSchoolInside, 0 , 0));
 	}
-	draw() {
-		background(20, 20, 20);
-
-		for (let i = 0; i < this.background.length; i ++) {
-			this.background[i].draw();
-		}
-	}
-	
 }

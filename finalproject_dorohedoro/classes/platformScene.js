@@ -45,6 +45,9 @@ class PlatformScene {
 
 	draw() {
 		background(20, 20, 20);
+		for (let i = 0; i < this.background.length; i ++) {
+			this.background[i].draw();
+		}
 
 
 		fill("white");
@@ -71,7 +74,7 @@ class PlatformScene {
 
 	 	player.y += player.ySpeed;
 	 	player.draw();
-	 	
+
 	 	//score++;
 
 	 	for (let i = 0; i < this.obstacles.length; i++) {
