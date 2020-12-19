@@ -20,7 +20,7 @@ class MapScene {
 
       // user input
       if (keyIsDown(ENTER)) {
-        scene = bg.sceneToOpen;
+        currentScene = bg.sceneToOpen;
       }
     }
   }

@@ -11,9 +11,10 @@ class CharactersScene {
 	
 
 		this.characters.push(new ChooseCharacter(nikaidoMask, width/ 3 * 2 + 100 , height / 2 - 100 , nikaidoMask, magicScene));
-		this.characters.push(new GameObject(nikaidoName, width/ 3 * 2 - 20, height / 2 - 150));
+		this.characters.push(new GameObject(nikaidoName, width/ 3 * 2  + 120, height / 2 - 150));
 
 		this.characters.push(new ChooseCharacter(kaimanMask, width/ 3 * 2 - 100, height / 2 - 100, kaimanMask, magicScene));
+		this.characters.push(new GameObject(kaimanName, width/ 3 * 2 - 80 , height / 2 - 150));
 	
 	}
 

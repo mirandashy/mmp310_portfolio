@@ -41,6 +41,8 @@ function preload() {
 	noiName = loadImage("images/noi_name.png");
 
 	kaimanMask = loadImage("images/kaiman_face.gif");
+	kaimanName = loadImage("images/kaiman_name.png");
+
 
 
 	nikaidoMask = loadImage("images/nikaido_mask.gif");
@@ -96,8 +98,7 @@ function setup() {
 	//imageMode(CENTER);
 
 	main = new EntryScene(); 
-	holeScene = new HoleScene();
-	magicScene  = new MagicScene();
+
 
 	tavernScene = new TavernScene();
 	hospitalScene = new HospitalScene();
@@ -106,6 +107,9 @@ function setup() {
 	schoolScene = new SchoolScene();
 	turkeyHouseScene = new TurkeyHouseScene();
 	enScene = new EnScene();
+
+	holeScene = new HoleScene();
+	magicScene  = new MagicScene();
 
 
 	characters = new CharactersScene();

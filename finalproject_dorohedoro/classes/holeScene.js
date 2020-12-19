@@ -2,9 +2,9 @@ class HoleScene extends MapScene {
 	constructor() {
 		super();
 
-		this.background.push(new Portal("Enter the Hospital", hospital, 980, height /2  - 150, 'hospitalScene'));
-		this.background.push(new Portal("Enter the Hole Market", market, 580, height /2 - 150, 'marketScene'));
-		this.background.push(new Portal("Enter the Hungry Burg", tavern, 200, height /2 , 'marketScene'));
+		this.background.push(new Portal("Enter the Hospital", hospital, 980, height /2  - 150, hospitalScene));
+		this.background.push(new Portal("Enter the Hole Market", market, 580, height /2 - 150, marketScene));
+		this.background.push(new Portal("Enter the Hungry Burg", tavern, 200, height /2 , marketScene));
 
 		this.background.push(new GameObject(light, 360, height / 2 - 150));
 		this.background.push(new GameObject(light, 850, height  / 2 - 150));
