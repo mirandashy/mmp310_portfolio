@@ -1,5 +1,5 @@
 class Gyoza extends GameObject {
-	constructor(x,y){
+	constructor(x,y, speed){
 		super(gyozaImage, x, y);
 		this.speed = 4;
 	}

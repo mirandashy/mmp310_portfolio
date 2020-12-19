@@ -1,5 +1,5 @@
 class PlatformScene {
-	constructor(img,minObstacles, maxObstacles) {
+	constructor(img, minObstacles, maxObstacles) {
 		this.img = img;
 		this.minObstacles = minObstacles;
 		this.maxObstacles = maxObstacles;
@@ -17,25 +17,19 @@ class PlatformScene {
 
 	}
 
-	setup(nextScene) {
+	setup() {
 		player.x = 300;
 		player.y = height/2;
-
-		this.obstacles = []; 
 		//this.obstaclesPassed = 0;
 
 		//this.nextScene = nextScene; 
+		this.obstacles = [];
 
 		var n = random(this.minObstacles, this.maxObstacles);
+		
 		for (let i = 0; i < n; i++) {
 			let x = random(width/2, width) + i * width / 2;
-				if ( currentScene == enScene || schoolScene || turkeyHouseScene ) {
-					this.obstacles.push(new Gyoza(x, height - this.groundY + 50, 10));
-				} else if ( currentScene == tavernScene || hospitalScene || marketScene ) {
-					this.obstacles.push(new Hammer(x, height - this.groundY + 50 , 10));
-					} else {
-						
-					}
+			this.obstacles.push(new Gyoza(x, height - this.groundY, 5));
 			
 				} 
 		}
@@ -45,6 +39,7 @@ class PlatformScene {
 
 	draw() {
 		background(20, 20, 20);
+		
 		for (let i = 0; i < this.background.length; i ++) {
 			this.background[i].draw();
 		}
@@ -78,9 +73,9 @@ class PlatformScene {
 	 	//score++;
 
 	 	for (let i = 0; i < this.obstacles.length; i++) {
-	 		let obstacle = this.obstacles[i];
-	 		obstacle.update();
-	 		obstacle.draw();
+	 		this.obstacles[i].update();
+	 		this.obstacles[i].draw();
+	 		
 
 	 		if (obstacle.collide(player)) {
 	 				currentScene = loseScene;
@@ -89,9 +84,10 @@ class PlatformScene {
 	 		if (i == this.obstacles.length - 1 && player.x > obstacle.x) {
 	 			currentScene = winScene;
 	 		}
-
 	 	}
 
+
+	 	
 
 	 		// passes each obstacles
 	 		//if (player.x > this.obstacle && i >= this.obstaclesPassed) {
