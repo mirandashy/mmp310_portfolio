@@ -1,8 +1,6 @@
-class ChooseCharacter {
+class ChooseCharacter extends GameObject{
 	constructor(img, x, y, characterName, sceneToOpen) {
-		this.img = img;
-		this.x = x;
-		this.y = y;
+		super(img, x, y);
 		this.characterName = characterName;
 		this.sceneToOpen = sceneToOpen;
 
@@ -13,8 +11,8 @@ class ChooseCharacter {
 	}
 
 	mousePressed() {
-		if (mouseX > this.x - 200 && mouseX < this.x + this.img.width &&
-			mouseY > this.y - 200 && mouseY < this.y + this.img.height) {
+		if (mouseX > this.x - this.width / 2 && mouseX < this.x + this.width &&
+			mouseY > this.y - this.height / 2 && mouseY < this.y + this.height) {
 			player.img = this.characterName;
 			currentScene = this.sceneToOpen;
 		}

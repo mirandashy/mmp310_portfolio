@@ -40,6 +40,7 @@ function preload() {
 	nikaidoMask = loadImage("images/nikaido_mask.gif");
 
 	startGameTab = loadImage("images/start_game_tab.gif");
+	dorohedoroTitle = loadImage("images/dorohedoro_title.png");
 
 	hospital = loadImage("images/hole_central_hospital.png");
 	hospitalInside = loadImage("images/hospital_intern.png");
@@ -85,7 +86,7 @@ function setup() {
 	createCanvas(1630, 400);
 	textFont('Roboto Mono');
 	
-	imageMode(CENTER);
+	//imageMode(CENTER);
 
 	main = new EntryScene(); 
 	holeScene = new HoleScene();

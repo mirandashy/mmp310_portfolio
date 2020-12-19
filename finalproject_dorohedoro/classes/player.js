@@ -1,4 +1,4 @@
-class Player extends ChooseCharacter {
+class Player extends GameObject {
 	constructor(x,y) {
 		super(shinMask, x, y);
 		

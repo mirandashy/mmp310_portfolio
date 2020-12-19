@@ -1,10 +1,7 @@
 class Portal extends GameObject{
 	constructor(message, img, x, y, sceneToOpen) {
-		super();
+		super(img, x, y);
 		this.message = message;
-		this.img = img;
-		this.x = x;
-		this.y = y;
 		this.sceneToOpen = sceneToOpen;
 	}
 
