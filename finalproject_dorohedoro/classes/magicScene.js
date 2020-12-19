@@ -9,7 +9,7 @@ class MagicScene extends MapScene {
 
 
 	draw() {
-		background('black');
+		background(20, 20, 20);
 
 		noStroke();
 		fill("grey");

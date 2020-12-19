@@ -11,7 +11,7 @@ var noiMask, kaimanMask, nikaidoMask;
 var startGameTab;
 
 
-var portal = [];
+var portals = [];
 
 var mushOne, mushTwo, mushThree;
 
@@ -23,11 +23,11 @@ var main;
 //var door;
 //var score = 0;
 //var display;
-//var scenes = {};
+var scenes = {};
 var currentScene;
 var currentCharacter; 
 var character = [];
-var scene;
+//var scene;
 var img;
 
 
@@ -132,10 +132,9 @@ function setup() {
 
 }
 
-//function changeScene(sceneName, nextScene) {
-	//currentScene = sceneName;
-	//scenes[currentScene].setup(nextScene);
-//}
+function changeScene(sceneName) {
+	currentScene = sceneName;
+}
 
 function mousePressed() {
 	currentScene.mousePressed();
@@ -172,4 +171,3 @@ function draw() {
 	//display.draw();
 
 }
-

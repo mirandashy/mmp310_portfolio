@@ -1,13 +1,14 @@
 class MapScene {
 	constructor() {
 		this.background = [];
-		this.door = [];
 	}
 
 	draw() {
-		background(0);
+		background(20, 20, 20);
 
-		/* draw door */
+		/* draw portal */
+
+		let enterPortal;
 
 		for (let i = 0; i < this.background.length; i ++) {
   			let bg = this.background[i]; // easier to use
@@ -18,12 +19,17 @@ class MapScene {
     			if (bg.collide(player)) {
       			bg.drawText();
 
-      // user input
-      if (keyIsDown(ENTER)) {
-        currentScene = bg.sceneToOpen;
-      }
-    }
-  }
+      			// user input
+      			if (keyIsDown(ENTER)) {
+       				enterPortal = bg.sceneToOpen;
+      			}
+    		}
+  	}
+
+  	if (enterPortal) {
+  	changeScene(enterPortal);
+	}
+
 }
 	
 	player.draw();
