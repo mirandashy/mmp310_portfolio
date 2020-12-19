@@ -131,7 +131,7 @@ function setup() {
  	player = new Player(width / 2, height / 2);
 
 
- 	currentScene = enScene;
+ 	currentScene = marketScene;
  	currentScene.setup();
  	//display = new Display();
 
