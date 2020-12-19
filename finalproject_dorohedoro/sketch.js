@@ -35,9 +35,16 @@ var img;
 
 function preload() {
 	shinMask = loadImage("images/shin_mask.gif");
+	shinName = loadImage("images/shin_name.png");
+
 	noiMask = loadImage("images/noi_mask.gif");
+	noiName = loadImage("images/noi_name.png");
+
 	kaimanMask = loadImage("images/kaiman_face.gif");
+
+
 	nikaidoMask = loadImage("images/nikaido_mask.gif");
+	nikaidoName = loadImage("images/nikaido_name.png");
 
 	startGameTab = loadImage("images/start_game_tab.gif");
 	dorohedoroTitle = loadImage("images/dorohedoro_title.png");
@@ -109,7 +116,7 @@ function setup() {
 
  	player = new Player(width / 2, height / 2);
 
- 	currentScene = main;
+ 	currentScene = characters;
 
  	//display = new Display();
 

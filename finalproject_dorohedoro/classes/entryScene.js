@@ -16,14 +16,14 @@ class EntryScene {
 	}
 
 	draw() {
-		background(0);
+		background(20, 20, 20);
 
 		for (let i = 0; i < this.tab.length; i ++) {
 			this.tab[i].draw();
 		}
 
 	}
-	
+
 	mousePressed() {
 				let tab = this.tab[0];
 		if (mouseX > tab.x && mouseX < tab.x + tab.width &&
