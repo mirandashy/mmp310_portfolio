@@ -134,7 +134,7 @@ function setup() {
  	player = new Player(width / 2, height / 2);
 
 
- 	currentScene = tavernScene;
+ 	currentScene = enScene;
 
  	//display = new Display();
 

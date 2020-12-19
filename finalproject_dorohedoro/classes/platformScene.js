@@ -1,8 +1,10 @@
 class PlatformScene {
 	constructor(img,minObstacles, maxObstacles) {
+		this.img = img;
 		this.minObstacles = minObstacles;
 		this.maxObstacles = maxObstacles;
 		this.obstacles = [];
+		this.background = [];
 		//this.obstaclesPassed = 0;
 		//this.obstaclesPassedOne = 10;
 		//this.obstaclesPassedTwo = 20;
@@ -43,6 +45,10 @@ class PlatformScene {
 
 	draw() {
 		background(20, 20, 20);
+
+		for (let i = 0; i < this.background.length; i ++){
+			this.background[i].draw();
+		}
 
 		fill("white");
 		textSize(20);
