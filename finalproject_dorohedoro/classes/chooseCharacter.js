@@ -15,7 +15,6 @@ class ChooseCharacter extends GameObject{
 			mouseY > this.y - this.height / 2 && mouseY < this.y + this.height) {
 			player.img = this.characterName;
 			currentScene = this.sceneToOpen;
-			currentScene.setup();
 	}
 
 	

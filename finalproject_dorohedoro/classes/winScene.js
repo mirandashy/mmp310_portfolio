@@ -26,7 +26,6 @@ class WinScene extends MapScene{
 		if ( currentScene == tavernScene|| hospitalScene || marketScene) {
 			if (keyIsDown(ENTER)) {
        			currentScene = holeScene;
-       			currentScene.setup();
        		}
 		}
 
@@ -34,7 +33,6 @@ class WinScene extends MapScene{
 		if ( currentScene == enScene || schoolScene || turkeyHouseScene) {
 			if (keyIsDown(ENTER)) {
        			currentScene = magicScene;
-       			currentScene.setup();
 			}
 		}
 

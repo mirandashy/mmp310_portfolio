@@ -78,12 +78,10 @@ class PlatformScene {
 
 	 		if (obstacles.collide(player)) {
 	 				currentScene = loseScene;
-	 				currentScene.setup();
 	 			}
 
 	 		if (i == this.obstacles.length - 1 && player.x > obstacle.x) {
 	 			currentScene = winScene;
-	 			currentScene.setup();
 	 		}
 	 	}
 

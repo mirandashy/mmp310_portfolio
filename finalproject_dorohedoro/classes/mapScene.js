@@ -27,7 +27,8 @@ class MapScene {
   	}
 
   	if (enterPortal) {
-  	changeScene(enterPortal);
+  	 changeScene(enterPortal);
+      currentScene.setup();
 	}
 
 }

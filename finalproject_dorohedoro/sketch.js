@@ -149,7 +149,10 @@ function setup() {
 }
 
 function changeScene(sceneName) {
-	currentScene = sceneName;
+    currentScene = sceneName;
+    if (currentScene.setup) {
+        currentScene.setup();
+    }
 }
 
 function mousePressed() {
