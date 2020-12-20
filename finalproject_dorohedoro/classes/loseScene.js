@@ -21,9 +21,9 @@ class LoseScene extends MapScene{
 		textSize(20);
 		textAlign(CENTER, CENTER);
 		
-		text("Hit Spacebar to go to main menu", width / 2 - 420 , height/ 2, width/2 + 20, height/2 +10);
-		text("If you came from the Hole World, hit Backspace to try again" , width/2 - 420 , height/ 2 - 70, width/ 2 + 20, height/2 + 10);
-		text("If you came from the Magic World, hit Enter to try again" , width/2 - 420 , height/ 2 - 40, width/ 2 + 20, height/2 + 10);
+		text("Hit SPACEBAR to go to main menu", width / 2 - 420 , height/ 2, width/2 + 20, height/2 +10);
+		text("If you came from the HOLE World, hit BACKSPACE to try again" , width/2 - 420 , height/ 2 - 70, width/ 2 + 20, height/2 + 10);
+		text("If you came from the MAGIC World, hit ENTER to try again" , width/2 - 420 , height/ 2 - 40, width/ 2 + 20, height/2 + 10);
 
 
 

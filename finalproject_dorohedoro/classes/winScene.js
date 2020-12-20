@@ -20,8 +20,9 @@ class WinScene extends MapScene{
 		fill(255);
 		textSize(20);
 		textAlign(CENTER, CENTER);
-		text("If you came from Hole World, hit Enter to go proceed to the next level" , width/2 - 420 , height/ 2 - 80, width/ 2 + 100, height/2 + 10);
-			text("If you came from Magic World, hit BackSpace to go proceed to the next level", width/2 - 420 , height/ 2 - 30, width/ 2 + 100, height/2 + 10);
+		text("Hit SPACEBAR to go to main menu", width / 2 - 420 , height/ 2 + 20 , width/2 + 20, height/2 +10);
+		text("If you came from HOLE World, hit ENTER to go proceed to the next level" , width/2 - 420 , height/ 2 - 80, width/ 2 + 100, height/2 + 10);
+		text("If you came from MAGIC World, hit BACKSPACE to go proceed to the next level", width/2 - 420 , height/ 2 - 30, width/ 2 + 100, height/2 + 10);
 
 			if (keyIsDown(ENTER)) {
 				currentScene = holeScene;

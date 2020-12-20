@@ -49,7 +49,7 @@ class PlatformScene {
 		fill("white");
 		textSize(20);
 		textFont('Roboto Mono');
-		var s = "Press spacebar to dodge the obstacle! One touch and the game is over!";
+		var s = "Press SPACEBAR to dodge the obstacle! One touch and the game is over!";
 		text(s, 50, 20, 300, 200);
 
 

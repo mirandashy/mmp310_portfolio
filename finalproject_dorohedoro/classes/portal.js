@@ -28,7 +28,7 @@ class Portal extends GameObject{
     		fill(0);
     		rect(50, 60 , 140,  100);
     		fill(255);
-			text("Hit Enter to enter the room", 50, 60, 150, 100);
+			text("Hit ENTER to get in the room", 50, 60, 150, 100);
 		} else {
 			noStroke();
     		fill(0);
