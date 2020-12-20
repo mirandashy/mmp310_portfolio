@@ -136,7 +136,7 @@ function setup() {
  	player = new Player(width / 2, height / 2);
 
 
- 	currentScene = winScene;
+ 	currentScene = main;
  	currentScene.setup();
  	//display = new Display();
 
