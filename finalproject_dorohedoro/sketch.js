@@ -131,7 +131,7 @@ function setup() {
 
  	display = new Display();
 
- 	currentScene = main;
+ 	currentScene = characters;
  	currentScene.setup();
 
  	//scenes.win = new Prompt("You win!", "Hit Enter to return to the Magic World");
