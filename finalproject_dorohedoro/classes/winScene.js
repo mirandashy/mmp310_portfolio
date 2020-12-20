@@ -25,14 +25,12 @@ class WinScene extends MapScene{
 
 		if ( currentScene == tavernScene|| hospitalScene || marketScene) {
 			if (keyIsDown(ENTER)) {
-       			currentScene = holeScene;
        		}
 		}
 
 
 		if ( currentScene == enScene || schoolScene || turkeyHouseScene) {
 			if (keyIsDown(ENTER)) {
-       			currentScene = magicScene;
 			}
 		}
 

@@ -31,7 +31,6 @@ class LoseScene extends MapScene{
        		}
 			if (keyIsDown(32)) {
        			currentScene = main;
-       			currentScene.setup();
        		}
 		}
 
@@ -39,11 +38,9 @@ class LoseScene extends MapScene{
 		if ( currentScene == enScene || schoolScene || turkeyHouseScene) {
 			if (keyIsDown(ENTER)) {
        			currentScene = magicScene;
-       			currentScene.setup();
        		}
 			if (keyIsDown(32)) {
        			currentScene = main;
-       			currentScene.setup();
        		}
 		}
 
