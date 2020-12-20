@@ -5,10 +5,8 @@ class PlatformScene {
 		this.maxObstacles = maxObstacles;
 		this.obstacles = [];
 		this.background = [];
-		//this.obstaclesPassed = 0;
-		//this.obstaclesPassedOne = 10;
-		//this.obstaclesPassedTwo = 20;
-		//this.obstaclesPassedThree = 30;
+		this.obstaclesPassed = 0;
+		this.playerWon = false;
 
 		this.groundY = 200;
 		this.gravity = 2;
@@ -20,7 +18,7 @@ class PlatformScene {
 	setup() {
 		player.x = 300;
 		player.y = height/2;
-		//this.obstaclesPassed = 0;
+		this.obstaclesPassed = 0;
 
 		//this.nextScene = nextScene; 
 		this.obstacles = [];
@@ -37,12 +35,16 @@ class PlatformScene {
 		
 
 	draw() {
+
 		background(20, 20, 20);
+		
 		
 		for (let i = 0; i < this.background.length; i ++) {
 			this.background[i].draw();
 		}
 
+		fill(0);
+    	rect(40, 70 , 320,  100);
 
 		fill("white");
 		textSize(20);
@@ -77,25 +79,37 @@ class PlatformScene {
 	 		
 
 	 		if (this.obstacles[i].collide(player)) {
-	 				currentScene = loseScene;
+	 			player.lives -=1;
+	 			currentScene = loseScene;
+
+	 			if (player.lives == 0) {
+	 				score = 0;
+	 				player.lives = 3;
+	 				level = 1;
+					currentScene = main;
 	 			}
-
-	 		if (i == this.obstacles.length - 1 && player.x > this.obstacles[i].x) {
-	 			currentScene = winScene;
 	 		}
-	 	}
 
-
-	 	
 
 	 		// passes each obstacles
-	 		//if (player.x > this.obstacle && i >= this.obstaclesPassed) {
-	 			//score += 10;
-	 			//this.obstaclesPassed++;
- 				 //for (let j = this.obstaclesPassed; j < this.obstacles.length; j++) {
-    				//this.obstacles[j].speed += this.acceleration;
-  				//}
+	 		if (player.x > this.obstacles[i].x && i >= this.obstaclesPassed && !this.playerWon) {
+	 			score += 10;
+	 			this.obstaclesPassed++;
+ 				 for (let j = this.obstaclesPassed; j < this.obstacles.length; j++) {
+    				this.obstacles[j].speed += this.acceleration;
+  				}
+	 		}
+
+	 		// player passes last obstacle
+	 		if (i == this.obstacles.length - 1 && player.x > this.obstacles[i].x) {
+	 				if (!this.playerWon) {
+	 					level++;
+						this.playerWon = true;
+	 				}
+
+	 			currentScene = winScene;
+	 		}
 	 			
-	 	//} 
-}	
+	 	} 
+	}	
 }

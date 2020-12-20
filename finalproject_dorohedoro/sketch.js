@@ -21,14 +21,13 @@ var hammerImage;
 
 var player;
 var main;
-//var door;
-//var score = 0;
-//var display;
+var level = 1;
+var score = 0;
+var display;
 var scenes = {};
 var currentScene;
 var currentCharacter; 
 var character = [];
-//var scene;
 var img;
 
 
@@ -44,15 +43,8 @@ function preload() {
 	kaimanMask = loadImage("images/kaiman_face.gif");
 	kaimanName = loadImage("images/kaiman_name.png");
 
-
-
 	nikaidoMask = loadImage("images/nikaido_mask.gif");
 	nikaidoName = loadImage("images/nikaido_name.png");
-
-	startGameTab = loadImage("images/start_game_tab.gif");
-	youLost = loadImage("images/you_lost.gif");
-	youWon = loadImage("images/you_win.gif");
-	dorohedoroTitle = loadImage("images/dorohedoro_title.png");
 
 	hospital = loadImage("images/hole_central_hospital.png");
 	hospitalInside = loadImage("images/hospital_intern.png");
@@ -72,26 +64,28 @@ function preload() {
 	turkeyHouse = loadImage("images/turkey_house_outside.png");
 	turkeyHouseInside = loadImage("images/turkey_house.png");	
 
-
-	
-
+	startGameTab = loadImage("images/start_game_tab.gif");
+	youLost = loadImage("images/you_lost.gif");
+	youWon = loadImage("images/you_win.gif");
+	magicWorldType = loadImage("images/magic_world.png");
+	holeWorldType = loadImage("images/hole_world.png");
+	dorohedoroTitle = loadImage("images/dorohedoro_title.png");
 
 	mushOne = loadImage("images/mushroomone.gif");
 	mushTwo = loadImage("images/mushroomtwo_reverse.gif");
 	mushThree = loadImage("images/mushroomthree.gif");
 
 	rain = loadImage("images/rain.gif");
-	textBox = loadImage("images/box.png");
-	textBoxTwo = loadImage("images/box_two.png");
-	
-
-
 	light = loadImage("images/lighting.png");
+	trash_bin = loadImage("images/trashbin.png");
+
+	treeImage = loadImage("images/treee.png");
+	fenceImage = loadImage("images/fence.png");
+	grassImage = loadImage("images/grass.png");
 	
 	gyozaImage = loadImage("images/gyoza.png");
-	hammerImage = loadImage("images/hammer.gif");
 
-	trash_bin = loadImage("images/trashbin.png");
+	
 	heartLives = loadImage("images/heart_lives.png");
 }
 
@@ -135,12 +129,11 @@ function setup() {
 
  	player = new Player(width / 2, height / 2);
 
+ 	display = new Display();
 
  	currentScene = main;
  	currentScene.setup();
- 	//display = new Display();
 
- 	//scenes.hole = new PlatformScene(10,20);
  	//scenes.win = new Prompt("You win!", "Hit Enter to return to the Magic World");
  	//scenes.lose = new Prompt("You lose!", "Hit Enter to try again");
 
@@ -187,6 +180,6 @@ function draw() {
 
 	//player.draw();
 	//scenes[currentScene].draw();
-	//display.draw();
+	display.draw();
 
 }

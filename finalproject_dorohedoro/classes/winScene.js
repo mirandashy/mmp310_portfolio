@@ -20,21 +20,16 @@ class WinScene extends MapScene{
 		fill(255);
 		textSize(20);
 		textAlign(CENTER, CENTER);
-		text("Hit Enter to go proceed to the next level", width/2 - 420 , height/ 2 - 60, width/ 2 + 20, height/2 + 10);
+		text("If you came from Hole World, hit Enter to go proceed to the next level" , width/2 - 420 , height/ 2 - 80, width/ 2 + 100, height/2 + 10);
+			text("If you came from Magic World, hit BackSpace to go proceed to the next level", width/2 - 420 , height/ 2 - 30, width/ 2 + 100, height/2 + 10);
 
-
-		if ( currentScene == tavernScene|| hospitalScene || marketScene) {
 			if (keyIsDown(ENTER)) {
 				currentScene = holeScene;
        		}
-		}
 
-
-		if ( currentScene == enScene || schoolScene || turkeyHouseScene) {
-			if (keyIsDown(ENTER)) {
+			if (keyIsDown(8)) {
 				currentScene = magicScene;
 			}
-		}
 
 	}
 }
