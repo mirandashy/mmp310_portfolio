@@ -50,6 +50,8 @@ function preload() {
 	nikaidoName = loadImage("images/nikaido_name.png");
 
 	startGameTab = loadImage("images/start_game_tab.gif");
+	youLost = loadImage("images/you_lost.gif");
+	youWon = loadImage("images/you_win.gif");
 	dorohedoroTitle = loadImage("images/dorohedoro_title.png");
 
 	hospital = loadImage("images/hole_central_hospital.png");
@@ -121,6 +123,9 @@ function setup() {
 	holeScene = new HoleScene();
 	magicScene  = new MagicScene();
 
+	loseScene = new LoseScene();
+	winScene = new WinScene();
+
 
 	characters = new CharactersScene();
 
@@ -131,7 +136,7 @@ function setup() {
  	player = new Player(width / 2, height / 2);
 
 
- 	currentScene = main;
+ 	currentScene = winScene;
  	currentScene.setup();
  	//display = new Display();
 

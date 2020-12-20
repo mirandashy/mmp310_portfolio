@@ -36,7 +36,6 @@ class PlatformScene {
 
 		
 
-
 	draw() {
 		background(20, 20, 20);
 		
@@ -77,12 +76,14 @@ class PlatformScene {
 	 		this.obstacles[i].draw();
 	 		
 
-	 		if (obstacle.collide(player)) {
+	 		if (obstacles.collide(player)) {
 	 				currentScene = loseScene;
+	 				currentScene.setup();
 	 			}
 
 	 		if (i == this.obstacles.length - 1 && player.x > obstacle.x) {
 	 			currentScene = winScene;
+	 			currentScene.setup();
 	 		}
 	 	}
 

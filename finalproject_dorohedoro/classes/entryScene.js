@@ -28,7 +28,8 @@ class EntryScene {
 				let tab = this.tab[0];
 		if (mouseX > tab.x && mouseX < tab.x + tab.width &&
    		 mouseY > tab.y && mouseY < tab.y + tab.height) {
-    	currentScene = characters;
+    		currentScene = characters;
+    		currentScene.setup();
 		}
 		
 		
