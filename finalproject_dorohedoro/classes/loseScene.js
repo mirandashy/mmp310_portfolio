@@ -9,7 +9,7 @@ class LoseScene extends MapScene{
 
 	}
 
-	draw(){
+	draw() {
 		background('red');
 
 		for (let i = 0; i < this.background.length; i ++) {
@@ -20,35 +20,32 @@ class LoseScene extends MapScene{
 		fill(255);
 		textSize(20);
 		textAlign(CENTER, CENTER);
-		text("Hit Enter to go back to Hole", width/2 - 420 , height/ 2 - 60, width/ 2 + 20, height/2 + 10);
+		
 		text("Hit Spacebar to go to main menu", width / 2 - 420 , height/ 2, width/2 + 20, height/2 +10);
 
 
-		if ( currentScene == tavernScene || hospitalScene || marketScene) {
-			if (keyIsDown(ENTER)) {
-       			currentScene = holeScene;
-       			currentScene.setup();
-       		}
-			if (keyIsDown(32)) {
-       			currentScene = main;
-       		}
-		}
-
-
-		if ( currentScene == enScene || schoolScene || turkeyHouseScene) {
-			if (keyIsDown(ENTER)) {
-       			currentScene = magicScene;
-       		}
-			if (keyIsDown(32)) {
-       			currentScene = main;
-       		}
-		}
-
 
 		
+				if (currentScene == tavernScene || hospitalScene || marketScene) {
+					text("Hit Backspace to go back to Hole", width/2 - 420 , height/ 2 - 60, width/ 2 + 20, height/2 + 10);
+					if (keyIsDown(8)) {
+					 	currentScene = holeScene;
+					}
+				}
+
+				if (currentScene == schoolScene || turkeyHouseScene || enScene) {
+					text("Hit Enter to go back to Magic World", width/2 - 420 , height/ 2 - 60, width/ 2 + 20, height/2 + 10);
+					if (keyIsDown(ENTER)) {
+						currentScene = magicScene;
+					}
+				
+       			}
+	
+
+		if (keyIsDown(32)) {
+       			currentScene = main;
+       		}
 
 
-}
-
-
+	}
 }

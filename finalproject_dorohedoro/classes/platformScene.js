@@ -29,7 +29,7 @@ class PlatformScene {
 		
 		for (let i = 0; i < n; i++) {
 			let x = random(width/2, width) + i * width / 2;
-			this.obstacles.push(new Gyoza(x, height - this.groundY, 5));
+			this.obstacles.push(new Gyoza(x, height - this.groundY + 50, 5));
 			
 				} 
 		}
@@ -76,11 +76,11 @@ class PlatformScene {
 	 		this.obstacles[i].draw();
 	 		
 
-	 		if (obstacles.collide(player)) {
+	 		if (this.obstacles[i].collide(player)) {
 	 				currentScene = loseScene;
 	 			}
 
-	 		if (i == this.obstacles.length - 1 && player.x > obstacle.x) {
+	 		if (i == this.obstacles.length - 1 && player.x > this.obstacles[i].x) {
 	 			currentScene = winScene;
 	 		}
 	 	}
