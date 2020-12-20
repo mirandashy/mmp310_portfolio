@@ -1,7 +1,5 @@
 /* 
-	project one_six
-	object oriented version
-	classes and objects
+	final_project
 
 */ 
 /*characters var */
@@ -15,7 +13,6 @@ var portals = [];
 
 var mushOne, mushTwo, mushThree;
 
-//var shinDoor, devilHouse, rain, textBox;
 var gyozaImage; 
 var hammerImage;
 
@@ -93,8 +90,6 @@ function preload() {
 function setup() {
 	createCanvas(1630, 400);
 	textFont('Roboto Mono');
-	
-	//imageMode(CENTER);
 
 	main = new EntryScene(); 
 
@@ -123,9 +118,6 @@ function setup() {
 
 	characters = new CharactersScene();
 
-	//mushTwo.delay(50);
-	//mushThree.delay(50);
-
 
  	player = new Player(width / 2, height / 2);
 
@@ -133,9 +125,6 @@ function setup() {
 
  	currentScene = main;
  	currentScene.setup();
-
- 	//scenes.win = new Prompt("You win!", "Hit Enter to return to the Magic World");
- 	//scenes.lose = new Prompt("You lose!", "Hit Enter to try again");
 
 
 
@@ -178,8 +167,6 @@ function draw() {
 	}
 
 
-	//player.draw();
-	//scenes[currentScene].draw();
 	display.draw();
 
 }
